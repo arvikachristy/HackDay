@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3097F0C6-3458-476F-B49D-84AA8CF03F4E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>localHackDay</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B50BD378E09DC87B56ED30EA7CF1290C3FE4B522</key>
+		<string>https://github.com/arvikachristy/HackDay.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>localHackDay.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B50BD378E09DC87B56ED30EA7CF1290C3FE4B522</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/arvikachristy/HackDay.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B50BD378E09DC87B56ED30EA7CF1290C3FE4B522</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B50BD378E09DC87B56ED30EA7CF1290C3FE4B522</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HackDay</string>
+		</dict>
+	</array>
+</dict>
+</plist>
