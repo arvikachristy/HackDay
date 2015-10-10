@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     passcodeBox.secureTextEntry = YES;
+    [numberOfPeopleBox setKeyboardType:UIKeyboardTypeNumberPad];
+    errorLabel.text = @"";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,8 +33,20 @@
 }
 
 - (IBAction)registerAction:(id)sender {
-    if (flatNameBox.text.length < 5 || flatNameBox.text.length > 32) {
-        
+    if (flatNameBox.text.length < 5) {
+        errorLabel.text = @"Flatname too short";
+        return;
+    } else if (flatNameBox.text.length > 32) {
+        errorLabel.text = @"Flatname too long";
+        return;
+    }
+    
+    if (passcodeBox.text.length < 5) {
+        errorLabel.text = @"passcode too short";
+        return;
+    } else if (passcodeBox.text.length > 16) {
+        errorLabel.text = @"passcode too long";
+        return;
     }
 }
 

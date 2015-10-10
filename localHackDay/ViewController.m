@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "RegisterViewController.h"
 
 @interface ViewController ()
 
@@ -35,6 +36,7 @@
 
 - (IBAction)registerAction:(id)sender {
     NSLog(@"Register button clicked");
+    [self showViewController:[RegisterViewController alloc] sender:nil];
 }
 
 @end
