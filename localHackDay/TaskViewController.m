@@ -24,6 +24,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)addCategoriesButton:(id)sender {
+    
+}
+
 /*
 #pragma mark - Navigation
 
