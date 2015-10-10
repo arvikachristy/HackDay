@@ -16,6 +16,8 @@
 		18EB3F5A1BC94F7700AE1581 /* localHackDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EB3F591BC94F7700AE1581 /* localHackDayTests.m */; };
 		18EB3F661BC9553600AE1581 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EB3F641BC9553600AE1581 /* RegisterViewController.m */; };
 		18EB3F671BC9553600AE1581 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EB3F651BC9553600AE1581 /* RegisterViewController.xib */; };
+		60101D961BC95B730030AC7B /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60101D941BC95B730030AC7B /* TaskViewController.m */; settings = {ASSET_TAGS = (); }; };
+		60101D971BC95B730030AC7B /* TaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60101D951BC95B730030AC7B /* TaskViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,9 @@
 		18EB3F631BC9553600AE1581 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		18EB3F641BC9553600AE1581 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		18EB3F651BC9553600AE1581 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		60101D931BC95B730030AC7B /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskViewController.h; sourceTree = "<group>"; };
+		60101D941BC95B730030AC7B /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
+		60101D951BC95B730030AC7B /* TaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +99,9 @@
 				18EB3F631BC9553600AE1581 /* RegisterViewController.h */,
 				18EB3F641BC9553600AE1581 /* RegisterViewController.m */,
 				18EB3F651BC9553600AE1581 /* RegisterViewController.xib */,
+				60101D931BC95B730030AC7B /* TaskViewController.h */,
+				60101D941BC95B730030AC7B /* TaskViewController.m */,
+				60101D951BC95B730030AC7B /* TaskViewController.xib */,
 				18EB3F4A1BC94F7700AE1581 /* Images.xcassets */,
 				18EB3F4C1BC94F7700AE1581 /* LaunchScreen.xib */,
 				18EB3F3D1BC94F7600AE1581 /* Supporting Files */,
@@ -207,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60101D971BC95B730030AC7B /* TaskViewController.xib in Resources */,
 				18EB3F491BC94F7700AE1581 /* Main.storyboard in Resources */,
 				18EB3F4E1BC94F7700AE1581 /* LaunchScreen.xib in Resources */,
 				18EB3F4B1BC94F7700AE1581 /* Images.xcassets in Resources */,
@@ -230,6 +239,7 @@
 			files = (
 				18EB3F461BC94F7700AE1581 /* ViewController.m in Sources */,
 				18EB3F431BC94F7700AE1581 /* AppDelegate.m in Sources */,
+				60101D961BC95B730030AC7B /* TaskViewController.m in Sources */,
 				18EB3F401BC94F7600AE1581 /* main.m in Sources */,
 				18EB3F661BC9553600AE1581 /* RegisterViewController.m in Sources */,
 			);
@@ -428,6 +438,7 @@
 				18EB3F5F1BC94F7700AE1581 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18EB3F601BC94F7700AE1581 /* Build configuration list for PBXNativeTarget "localHackDayTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +447,7 @@
 				18EB3F621BC94F7700AE1581 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
