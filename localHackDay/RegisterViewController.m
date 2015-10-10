@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import <Parse/Parse.h>
 
 @interface RegisterViewController ()
 
@@ -48,6 +49,14 @@
         errorLabel.text = @"passcode too long";
         return;
     }
+    
+    PFUser *user = [PFUser user];
+    user.username = flatNameBox.text;
+    user.password = passcodeBox.text;
+    user[@"number"] = numberOfPeopleBox.text;
+    
+    [user signUp];
+    
 }
 
 

@@ -16,8 +16,20 @@
 		18EB3F5A1BC94F7700AE1581 /* localHackDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EB3F591BC94F7700AE1581 /* localHackDayTests.m */; };
 		18EB3F661BC9553600AE1581 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EB3F641BC9553600AE1581 /* RegisterViewController.m */; };
 		18EB3F671BC9553600AE1581 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EB3F651BC9553600AE1581 /* RegisterViewController.xib */; };
-		60101D961BC95B730030AC7B /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60101D941BC95B730030AC7B /* TaskViewController.m */; settings = {ASSET_TAGS = (); }; };
-		60101D971BC95B730030AC7B /* TaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60101D951BC95B730030AC7B /* TaskViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		60101D961BC95B730030AC7B /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60101D941BC95B730030AC7B /* TaskViewController.m */; };
+		60101D971BC95B730030AC7B /* TaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60101D951BC95B730030AC7B /* TaskViewController.xib */; };
+		906356691BC9625F00FD116A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906356671BC9625F00FD116A /* Bolts.framework */; };
+		9063566A1BC9625F00FD116A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906356681BC9625F00FD116A /* Parse.framework */; };
+		9063566C1BC9627F00FD116A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9063566B1BC9627F00FD116A /* AudioToolbox.framework */; };
+		9063566E1BC9628600FD116A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9063566D1BC9628600FD116A /* CFNetwork.framework */; };
+		906356701BC9628F00FD116A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9063566F1BC9628F00FD116A /* CoreGraphics.framework */; };
+		906356721BC9629700FD116A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906356711BC9629700FD116A /* CoreLocation.framework */; };
+		906356741BC9629E00FD116A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906356731BC9629E00FD116A /* QuartzCore.framework */; };
+		906356761BC962A600FD116A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906356751BC962A600FD116A /* Security.framework */; };
+		906356781BC962AC00FD116A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906356771BC962AC00FD116A /* StoreKit.framework */; };
+		9063567A1BC962B600FD116A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906356791BC962B600FD116A /* SystemConfiguration.framework */; };
+		9063567C1BC962BF00FD116A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9063567B1BC962BF00FD116A /* libz.dylib */; };
+		9063567E1BC962D500FD116A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9063567D1BC962D500FD116A /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +62,18 @@
 		60101D931BC95B730030AC7B /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskViewController.h; sourceTree = "<group>"; };
 		60101D941BC95B730030AC7B /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
 		60101D951BC95B730030AC7B /* TaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskViewController.xib; sourceTree = "<group>"; };
+		906356671BC9625F00FD116A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		906356681BC9625F00FD116A /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		9063566B1BC9627F00FD116A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9063566D1BC9628600FD116A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		9063566F1BC9628F00FD116A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		906356711BC9629700FD116A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		906356731BC9629E00FD116A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		906356751BC962A600FD116A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		906356771BC962AC00FD116A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		906356791BC962B600FD116A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9063567B1BC962BF00FD116A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		9063567D1BC962D500FD116A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +81,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9063567E1BC962D500FD116A /* libsqlite3.dylib in Frameworks */,
+				9063567C1BC962BF00FD116A /* libz.dylib in Frameworks */,
+				9063567A1BC962B600FD116A /* SystemConfiguration.framework in Frameworks */,
+				906356781BC962AC00FD116A /* StoreKit.framework in Frameworks */,
+				906356761BC962A600FD116A /* Security.framework in Frameworks */,
+				906356741BC9629E00FD116A /* QuartzCore.framework in Frameworks */,
+				906356721BC9629700FD116A /* CoreLocation.framework in Frameworks */,
+				906356701BC9628F00FD116A /* CoreGraphics.framework in Frameworks */,
+				9063566E1BC9628600FD116A /* CFNetwork.framework in Frameworks */,
+				9063566C1BC9627F00FD116A /* AudioToolbox.framework in Frameworks */,
+				9063566A1BC9625F00FD116A /* Parse.framework in Frameworks */,
+				906356691BC9625F00FD116A /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +109,18 @@
 		18EB3F311BC94F7600AE1581 = {
 			isa = PBXGroup;
 			children = (
+				9063567D1BC962D500FD116A /* libsqlite3.dylib */,
+				9063567B1BC962BF00FD116A /* libz.dylib */,
+				906356791BC962B600FD116A /* SystemConfiguration.framework */,
+				906356771BC962AC00FD116A /* StoreKit.framework */,
+				906356751BC962A600FD116A /* Security.framework */,
+				906356731BC9629E00FD116A /* QuartzCore.framework */,
+				906356711BC9629700FD116A /* CoreLocation.framework */,
+				9063566F1BC9628F00FD116A /* CoreGraphics.framework */,
+				9063566D1BC9628600FD116A /* CFNetwork.framework */,
+				9063566B1BC9627F00FD116A /* AudioToolbox.framework */,
+				906356671BC9625F00FD116A /* Bolts.framework */,
+				906356681BC9625F00FD116A /* Parse.framework */,
 				18EB3F3C1BC94F7600AE1581 /* localHackDay */,
 				18EB3F561BC94F7700AE1581 /* localHackDayTests */,
 				18EB3F3B1BC94F7600AE1581 /* Products */,
@@ -369,6 +417,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = localHackDay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -379,6 +431,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = localHackDay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
