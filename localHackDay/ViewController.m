@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "RegisterViewController.h"
+#import "TaskViewController.h"
 
 @interface ViewController ()
 
@@ -36,6 +37,7 @@
 
 - (IBAction)registerAction:(id)sender {
     NSLog(@"Register button clicked");
+    //[self showViewController:[TaskViewController alloc] sender:nil];
     [self showViewController:[RegisterViewController alloc] sender:nil];
 }
 

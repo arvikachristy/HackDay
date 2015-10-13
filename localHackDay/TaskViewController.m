@@ -7,6 +7,7 @@
 //
 
 #import "TaskViewController.h"
+#import "NewCategoryViewController.h"
 
 @interface TaskViewController ()
 
@@ -25,7 +26,7 @@
 }
 
 - (IBAction)addCategoriesButton:(id)sender {
-    
+    [self showViewController:[NewCategoryViewController alloc]  sender:nil];
 }
 
 /*

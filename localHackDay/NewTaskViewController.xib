@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewTaskViewController">
+            <connections>
+                <outlet property="createTaskCategory" destination="bKt-vG-iLu" id="oYO-7U-gjB"/>
+                <outlet property="createTaskTitle" destination="dbd-Nt-Hxi" id="07i-wr-2ld"/>
+                <outlet property="submitNewTask" destination="rbG-ZH-uYc" id="aCf-9R-3HB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbd-Nt-Hxi">
+                    <rect key="frame" x="8" y="172" width="584" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKt-vG-iLu">
+                    <rect key="frame" x="8" y="271" width="584" height="216"/>
+                    <animations/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="WUz-Ah-xBT"/>
+                        <outlet property="delegate" destination="-1" id="Xt6-BJ-oar"/>
+                    </connections>
+                </pickerView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYJ-wo-UY4">
+                    <rect key="frame" x="8" y="47" width="584" height="46"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="IUl-ua-77V"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbG-ZH-uYc">
+                    <rect key="frame" x="206" y="523" width="189" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="189" id="eCR-Yn-fkV"/>
+                    </constraints>
+                    <state key="normal" title="Submit"/>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="bKt-vG-iLu" firstAttribute="leading" secondItem="dbd-Nt-Hxi" secondAttribute="leading" id="9AX-Go-HxM"/>
+                <constraint firstItem="FYJ-wo-UY4" firstAttribute="leading" secondItem="dbd-Nt-Hxi" secondAttribute="leading" id="CZQ-fd-aZZ"/>
+                <constraint firstItem="dbd-Nt-Hxi" firstAttribute="top" secondItem="FYJ-wo-UY4" secondAttribute="bottom" constant="79" id="Cmc-Z7-66K"/>
+                <constraint firstItem="FYJ-wo-UY4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="47" id="DQf-D5-tm8"/>
+                <constraint firstItem="dbd-Nt-Hxi" firstAttribute="trailing" secondItem="bKt-vG-iLu" secondAttribute="trailing" id="Dti-Aq-Igg"/>
+                <constraint firstItem="dbd-Nt-Hxi" firstAttribute="trailing" secondItem="FYJ-wo-UY4" secondAttribute="trailing" id="SSR-0i-Ryz"/>
+                <constraint firstItem="bKt-vG-iLu" firstAttribute="centerX" secondItem="rbG-ZH-uYc" secondAttribute="centerX" id="h7m-88-Vo5"/>
+                <constraint firstItem="rbG-ZH-uYc" firstAttribute="top" secondItem="bKt-vG-iLu" secondAttribute="bottom" constant="36" id="hd0-VP-PWU"/>
+                <constraint firstItem="bKt-vG-iLu" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="r9f-l2-jAD"/>
+                <constraint firstItem="bKt-vG-iLu" firstAttribute="top" secondItem="dbd-Nt-Hxi" secondAttribute="bottom" constant="69" id="uuM-a7-Nx9"/>
+                <constraint firstItem="FYJ-wo-UY4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="zkj-1S-chJ"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

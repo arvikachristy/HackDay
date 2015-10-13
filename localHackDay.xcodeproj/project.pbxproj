@@ -18,6 +18,10 @@
 		18EB3F671BC9553600AE1581 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EB3F651BC9553600AE1581 /* RegisterViewController.xib */; };
 		60101D961BC95B730030AC7B /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60101D941BC95B730030AC7B /* TaskViewController.m */; };
 		60101D971BC95B730030AC7B /* TaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60101D951BC95B730030AC7B /* TaskViewController.xib */; };
+		731986071BCDAAF5007D5B13 /* NewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731986051BCDAAF5007D5B13 /* NewTaskViewController.m */; settings = {ASSET_TAGS = (); }; };
+		731986081BCDAAF5007D5B13 /* NewTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731986061BCDAAF5007D5B13 /* NewTaskViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		7319860C1BCDABD4007D5B13 /* NewCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319860A1BCDABD4007D5B13 /* NewCategoryViewController.m */; settings = {ASSET_TAGS = (); }; };
+		7319860D1BCDABD4007D5B13 /* NewCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7319860B1BCDABD4007D5B13 /* NewCategoryViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		906356691BC9625F00FD116A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906356671BC9625F00FD116A /* Bolts.framework */; };
 		9063566A1BC9625F00FD116A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906356681BC9625F00FD116A /* Parse.framework */; };
 		9063566C1BC9627F00FD116A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9063566B1BC9627F00FD116A /* AudioToolbox.framework */; };
@@ -62,6 +66,12 @@
 		60101D931BC95B730030AC7B /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskViewController.h; sourceTree = "<group>"; };
 		60101D941BC95B730030AC7B /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
 		60101D951BC95B730030AC7B /* TaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskViewController.xib; sourceTree = "<group>"; };
+		731986041BCDAAF5007D5B13 /* NewTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTaskViewController.h; sourceTree = "<group>"; };
+		731986051BCDAAF5007D5B13 /* NewTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTaskViewController.m; sourceTree = "<group>"; };
+		731986061BCDAAF5007D5B13 /* NewTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTaskViewController.xib; sourceTree = "<group>"; };
+		731986091BCDABD4007D5B13 /* NewCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCategoryViewController.h; sourceTree = "<group>"; };
+		7319860A1BCDABD4007D5B13 /* NewCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCategoryViewController.m; sourceTree = "<group>"; };
+		7319860B1BCDABD4007D5B13 /* NewCategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewCategoryViewController.xib; sourceTree = "<group>"; };
 		906356671BC9625F00FD116A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		906356681BC9625F00FD116A /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		9063566B1BC9627F00FD116A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -141,15 +151,21 @@
 			children = (
 				18EB3F411BC94F7600AE1581 /* AppDelegate.h */,
 				18EB3F421BC94F7700AE1581 /* AppDelegate.m */,
-				18EB3F441BC94F7700AE1581 /* ViewController.h */,
-				18EB3F451BC94F7700AE1581 /* ViewController.m */,
-				18EB3F471BC94F7700AE1581 /* Main.storyboard */,
+				731986041BCDAAF5007D5B13 /* NewTaskViewController.h */,
+				731986051BCDAAF5007D5B13 /* NewTaskViewController.m */,
+				731986061BCDAAF5007D5B13 /* NewTaskViewController.xib */,
+				731986091BCDABD4007D5B13 /* NewCategoryViewController.h */,
+				7319860A1BCDABD4007D5B13 /* NewCategoryViewController.m */,
+				7319860B1BCDABD4007D5B13 /* NewCategoryViewController.xib */,
 				18EB3F631BC9553600AE1581 /* RegisterViewController.h */,
 				18EB3F641BC9553600AE1581 /* RegisterViewController.m */,
 				18EB3F651BC9553600AE1581 /* RegisterViewController.xib */,
 				60101D931BC95B730030AC7B /* TaskViewController.h */,
 				60101D941BC95B730030AC7B /* TaskViewController.m */,
 				60101D951BC95B730030AC7B /* TaskViewController.xib */,
+				18EB3F441BC94F7700AE1581 /* ViewController.h */,
+				18EB3F451BC94F7700AE1581 /* ViewController.m */,
+				18EB3F471BC94F7700AE1581 /* Main.storyboard */,
 				18EB3F4A1BC94F7700AE1581 /* Images.xcassets */,
 				18EB3F4C1BC94F7700AE1581 /* LaunchScreen.xib */,
 				18EB3F3D1BC94F7600AE1581 /* Supporting Files */,
@@ -227,7 +243,7 @@
 		18EB3F321BC94F7600AE1581 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = team;
 				TargetAttributes = {
 					18EB3F391BC94F7600AE1581 = {
@@ -265,8 +281,10 @@
 			files = (
 				60101D971BC95B730030AC7B /* TaskViewController.xib in Resources */,
 				18EB3F491BC94F7700AE1581 /* Main.storyboard in Resources */,
+				731986081BCDAAF5007D5B13 /* NewTaskViewController.xib in Resources */,
 				18EB3F4E1BC94F7700AE1581 /* LaunchScreen.xib in Resources */,
 				18EB3F4B1BC94F7700AE1581 /* Images.xcassets in Resources */,
+				7319860D1BCDABD4007D5B13 /* NewCategoryViewController.xib in Resources */,
 				18EB3F671BC9553600AE1581 /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,7 +304,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				18EB3F461BC94F7700AE1581 /* ViewController.m in Sources */,
+				7319860C1BCDABD4007D5B13 /* NewCategoryViewController.m in Sources */,
 				18EB3F431BC94F7700AE1581 /* AppDelegate.m in Sources */,
+				731986071BCDAAF5007D5B13 /* NewTaskViewController.m in Sources */,
 				60101D961BC95B730030AC7B /* TaskViewController.m in Sources */,
 				18EB3F401BC94F7600AE1581 /* main.m in Sources */,
 				18EB3F661BC9553600AE1581 /* RegisterViewController.m in Sources */,
@@ -352,6 +372,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -367,7 +388,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -405,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -423,6 +444,7 @@
 				);
 				INFOPLIST_FILE = localHackDay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "team.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -437,6 +459,7 @@
 				);
 				INFOPLIST_FILE = localHackDay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "team.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -455,6 +478,7 @@
 				);
 				INFOPLIST_FILE = localHackDayTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "team.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/localHackDay.app/localHackDay";
 			};
@@ -470,6 +494,7 @@
 				);
 				INFOPLIST_FILE = localHackDayTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "team.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/localHackDay.app/localHackDay";
 			};
