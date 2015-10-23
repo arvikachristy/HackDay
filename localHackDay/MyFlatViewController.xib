@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyFlatViewController">
+            <connections>
+                <outlet property="addFlatmateButton" destination="Gzw-8n-3av" id="pfi-Tq-ArZ"/>
+                <outlet property="changeUserButton" destination="8O0-ph-6Bb" id="i5g-e3-Yu0"/>
+                <outlet property="flatImage" destination="vcR-GT-9ve" id="EEd-jE-utM"/>
+                <outlet property="leaderboardTableview" destination="dRo-V1-0jg" id="dv8-ug-ZYI"/>
+                <outlet property="signOutButton" destination="al8-it-UXj" id="nxD-XH-Tj6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vcR-GT-9ve">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="236"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.39027662810000002" green="1" blue="0.4706066525" alpha="1" colorSpace="calibratedRGB"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dRo-V1-0jg">
+                    <rect key="frame" x="8" y="244" width="584" height="110"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="110" id="Jas-Jo-gqn"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="LFN-aU-1cx"/>
+                        <outlet property="delegate" destination="-1" id="rJY-BI-m0P"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gzw-8n-3av">
+                    <rect key="frame" x="457" y="362" width="135" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="135" id="y5L-GW-xOo"/>
+                    </constraints>
+                    <state key="normal" title="Add Flatmate +"/>
+                    <connections>
+                        <action selector="addflatMates:" destination="-1" eventType="touchUpInside" id="Usz-t8-3S4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8O0-ph-6Bb">
+                    <rect key="frame" x="479" y="400" width="113" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="113" id="97e-FE-Qx3"/>
+                    </constraints>
+                    <state key="normal" title="Change User"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al8-it-UXj">
+                    <rect key="frame" x="256" y="497" width="89" height="30"/>
+                    <animations/>
+                    <state key="normal" title="Sign Out Flat"/>
+                    <connections>
+                        <action selector="signOutFlat:" destination="-1" eventType="touchUpInside" id="7Ut-AY-Na0"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="vcR-GT-9ve" secondAttribute="trailing" id="1mf-hc-ERr"/>
+                <constraint firstItem="vcR-GT-9ve" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2Da-Ye-iDm"/>
+                <constraint firstItem="vcR-GT-9ve" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="41z-B7-O9o"/>
+                <constraint firstItem="dRo-V1-0jg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-1" id="6Yu-mO-uzi"/>
+                <constraint firstItem="Gzw-8n-3av" firstAttribute="top" secondItem="dRo-V1-0jg" secondAttribute="bottom" constant="8" symbolic="YES" id="FcN-i3-Bbl"/>
+                <constraint firstItem="8O0-ph-6Bb" firstAttribute="trailing" secondItem="Gzw-8n-3av" secondAttribute="trailing" id="Fiz-2L-5uT"/>
+                <constraint firstItem="al8-it-UXj" firstAttribute="centerX" secondItem="dRo-V1-0jg" secondAttribute="centerX" constant="0.5" id="Xay-iF-fhb"/>
+                <constraint firstItem="Gzw-8n-3av" firstAttribute="trailing" secondItem="dRo-V1-0jg" secondAttribute="trailing" id="e2a-NB-lY4"/>
+                <constraint firstItem="al8-it-UXj" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" constant="-65" id="jdj-tG-ocR"/>
+                <constraint firstItem="8O0-ph-6Bb" firstAttribute="top" secondItem="Gzw-8n-3av" secondAttribute="bottom" constant="8" symbolic="YES" id="odb-NB-lpu"/>
+                <constraint firstItem="dRo-V1-0jg" firstAttribute="top" secondItem="vcR-GT-9ve" secondAttribute="bottom" constant="8" symbolic="YES" id="oip-VO-PfG"/>
+                <constraint firstItem="vcR-GT-9ve" firstAttribute="centerX" secondItem="dRo-V1-0jg" secondAttribute="centerX" id="w9l-Go-Umi"/>
+                <constraint firstItem="dRo-V1-0jg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="zU5-eq-aMe"/>
+            </constraints>
+            <point key="canvasLocation" x="496" y="547"/>
+        </view>
+    </objects>
+</document>

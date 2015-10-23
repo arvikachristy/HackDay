@@ -7,9 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewCategoryViewController">
             <connections>
-                <outlet property="createCategoryTitle" destination="SnD-MV-Qcw" id="ASy-za-msx"/>
-                <outlet property="submitNewCategory" destination="vAZ-tG-aaM" id="BjK-QH-Obq"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="createCategoryTitle" destination="SnD-MV-Qcw" id="SQa-Hr-fMF"/>
+                <outlet property="errorLabel" destination="CtS-vh-ov9" id="MqD-dE-AnO"/>
+                <outlet property="submitNewCategory" destination="vAZ-tG-aaM" id="QLv-Fc-gPE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="krM-dc-sqZ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -17,45 +18,49 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SnD-MV-Qcw">
-                    <rect key="frame" x="8" y="172" width="584" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SnD-MV-Qcw">
+                    <rect key="frame" x="8" y="176" width="584" height="30"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6q-Pz-LJB">
-                    <rect key="frame" x="8" y="47" width="584" height="46"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtS-vh-ov9">
+                    <rect key="frame" x="8" y="123" width="584" height="30"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="46" id="1yT-mN-nsu"/>
+                        <constraint firstAttribute="height" constant="30" id="hVH-k8-xz5"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAZ-tG-aaM">
-                    <rect key="frame" x="206" y="523" width="189" height="30"/>
+                    <rect key="frame" x="248" y="496" width="104" height="57"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="189" id="VBa-Zv-ABP"/>
+                        <constraint firstAttribute="width" constant="104" id="1zx-5G-XCH"/>
+                        <constraint firstAttribute="height" constant="57" id="29g-Tp-XIi"/>
                     </constraints>
-                    <state key="normal" title="Submit"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <state key="normal" title="Submit">
+                        <color key="titleColor" red="0.39027662810000002" green="1" blue="0.4706066525" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
-                        <action selector="addSubmitNewCategory:" destination="-1" eventType="touchDown" id="d8K-GL-Dkc"/>
+                        <action selector="addSubmitNewCategory:" destination="-1" eventType="touchDown" id="hne-fc-oym"/>
                     </connections>
                 </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="H6q-Pz-LJB" firstAttribute="leading" secondItem="SnD-MV-Qcw" secondAttribute="leading" id="8lj-gB-dKp"/>
-                <constraint firstItem="SnD-MV-Qcw" firstAttribute="top" secondItem="H6q-Pz-LJB" secondAttribute="bottom" constant="79" id="GHS-r5-k8V"/>
-                <constraint firstItem="H6q-Pz-LJB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="R2l-as-qbL"/>
-                <constraint firstItem="H6q-Pz-LJB" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="VeM-v0-8hO"/>
-                <constraint firstItem="H6q-Pz-LJB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="47" id="a7t-0j-mhS"/>
-                <constraint firstAttribute="bottom" secondItem="vAZ-tG-aaM" secondAttribute="bottom" constant="47" id="bN2-Dt-YSY"/>
-                <constraint firstItem="vAZ-tG-aaM" firstAttribute="centerX" secondItem="SnD-MV-Qcw" secondAttribute="centerX" id="df4-3p-dKh"/>
-                <constraint firstItem="SnD-MV-Qcw" firstAttribute="trailing" secondItem="H6q-Pz-LJB" secondAttribute="trailing" id="nzO-TW-FYr"/>
+                <constraint firstItem="CtS-vh-ov9" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="Bgp-s7-7pl"/>
+                <constraint firstItem="SnD-MV-Qcw" firstAttribute="top" secondItem="CtS-vh-ov9" secondAttribute="bottom" constant="23" id="Wai-57-uyg"/>
+                <constraint firstItem="CtS-vh-ov9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="123" id="Xlx-VT-26j"/>
+                <constraint firstItem="SnD-MV-Qcw" firstAttribute="leading" secondItem="CtS-vh-ov9" secondAttribute="leading" id="Ya7-Ua-d4k"/>
+                <constraint firstAttribute="bottom" secondItem="vAZ-tG-aaM" secondAttribute="bottom" constant="47" id="cGs-Vy-1MQ"/>
+                <constraint firstItem="CtS-vh-ov9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="i5k-LD-Be4"/>
+                <constraint firstItem="SnD-MV-Qcw" firstAttribute="centerX" secondItem="vAZ-tG-aaM" secondAttribute="centerX" id="nmi-l0-fKf"/>
+                <constraint firstItem="SnD-MV-Qcw" firstAttribute="trailing" secondItem="CtS-vh-ov9" secondAttribute="trailing" id="tWG-Zu-emr"/>
             </constraints>
         </view>
     </objects>

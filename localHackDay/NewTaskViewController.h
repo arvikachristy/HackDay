@@ -7,14 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface NewTaskViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+@interface NewTaskViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate>
+
+
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField *createTaskTitle;
+@property (nonatomic) UITextField *activeField;
 
-@property (weak, nonatomic) IBOutlet UIPickerView *createTaskCategory;
-@property (strong, nonatomic) NSArray *taskCategories;
+@property (weak, nonatomic) IBOutlet UIPickerView *createTaskCategoryPicker;
+@property (strong, nonatomic) NSMutableArray *categories;
+@property (nonatomic) PFObject *selectedCategory;
 
-@property (weak, nonatomic) IBOutlet UIButton *submitNewTask;
+@property (weak, nonatomic) IBOutlet UIButton *submitNewTaskButton;
 
 @end

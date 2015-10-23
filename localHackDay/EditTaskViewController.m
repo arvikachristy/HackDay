@@ -1,39 +1,44 @@
 //
-//  NewTaskViewController.m
+//  EditTaskViewController.m
 //  localHackDay
 //
-//  Created by Johnson Cheung on 11/10/2015.
+//  Created by Johnson Cheung on 19/10/2015.
 //  Copyright © 2015 team. All rights reserved.
 //
 
-#import "NewTaskViewController.h"
+#import "EditTaskViewController.h"
 #import "NewCategoryViewController.h"
-#import <Parse/parse.h>
+#import <Parse/Parse.h>
 
-@interface NewTaskViewController ()
+@interface EditTaskViewController ()
 
 @end
 
-@implementation NewTaskViewController
+@implementation EditTaskViewController
 
 @synthesize errorLabel;
 
-@synthesize createTaskTitle;
+@synthesize editTaskTitle;
 @synthesize activeField;
 
-@synthesize createTaskCategoryPicker;
+@synthesize editTaskCategoryPicker;
 @synthesize categories;
 @synthesize selectedCategory;
-
-@synthesize submitNewTaskButton;
 
 
 -(void)viewWillAppear:(BOOL)animated{
     animated = YES;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 
-    self.navigationItem.title = @"New Task";
+    self.navigationItem.title = @"Edit Task";
+    
+    editTaskTitle.text = editingTask[@"TaskTitle"];
+    selectedCategory = editingTask[@"Category"];
+    
+    
     [self fetchCategoriesFromDB];
+    
+    [editTaskCategoryPicker selectRow:0 inComponent:0 animated:YES];
     
 }
 
@@ -41,11 +46,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
     errorLabel.text = @"";
-    createTaskTitle.delegate = self;
-    createTaskCategoryPicker.dataSource = self;
-    createTaskCategoryPicker.delegate = self;
+    editTaskTitle.delegate = self;
+    editTaskCategoryPicker.dataSource = self;
+    editTaskCategoryPicker.delegate = self;
     
     categories = [[NSMutableArray alloc] init];
     
@@ -57,8 +61,6 @@
     
     UITapGestureRecognizer *tapDismissKB = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKB)];
     [self.view addGestureRecognizer:tapDismissKB];
-   
-    
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
@@ -80,13 +82,11 @@
 
 -(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     
-    PFObject *object = [categories objectAtIndex:row];
-    NSString *pickerRowTitle = object[@"CategoryTitle"];
+    PFObject *pickerCategory = [categories objectAtIndex:row];
+    NSString *pickerRowTitle = pickerCategory[@"CategoryTitle"];
     
     return pickerRowTitle;
-     
-   // return [taskCategories objectAtIndex:row];
-}
+  }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     selectedCategory = [categories objectAtIndex:row];
@@ -102,13 +102,16 @@
     [categories removeAllObjects];
     PFQuery *query = [PFQuery queryWithClassName:@"Category"];
     [query whereKey:@"Owner" equalTo:[PFUser currentUser]];
+    [query whereKey:@"objectId" notEqualTo:selectedCategory.objectId];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if(!error){
             for (PFObject *object in objects) {
                 [categories addObject:object];
             }
+            
+            [categories insertObject:editingTask[@"Category"] atIndex:0];
             dispatch_async(dispatch_get_main_queue(), ^ {
-                [createTaskCategoryPicker reloadAllComponents];
+                [editTaskCategoryPicker reloadAllComponents];
                 selectedCategory = [categories objectAtIndex:0];
             });
         }else{
@@ -122,25 +125,18 @@
     [self showViewController:[NewCategoryViewController alloc]  sender:nil];
 }
 
-
--(IBAction)addSubmitNewTaskButton:(id)sender{
-    NSString *trimmedTitle = [createTaskTitle.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    if(trimmedTitle.length < 1){
-        errorLabel.text = @"task title can't be blank";
-        return;
-    }
-    
-    
-    PFObject *task = [PFObject objectWithClassName:@"Task"];
-    task[@"TaskTitle"] = trimmedTitle;
-    task[@"Category"] = selectedCategory;
-    task[@"Status"] = @"Needs Action";
-    //task[@"StatusOwner"] = nil;
-    task[@"StatusDate"] = [NSDate date];
-    [task save];
+-(IBAction)addSubmitEditedTaskButton:(id)sender{
+    editingTask[@"TaskTitle"] = editTaskTitle.text;
+    editingTask[@"Category"] = selectedCategory;
+    [editingTask save];
     [self goBack];
 }
 
+-(IBAction)addDeleteTaskButton:(id)sender{
+    
+    [self alertDelete];
+//    [self goBackTwice];
+}
 
 -(void)dismissKB{
     [activeField resignFirstResponder];
@@ -152,6 +148,37 @@
     //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(void)goBackTwice{
+    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(id)initWithTask:(PFObject*)task{
+    self = [super init];
+    editingTask = task;
+    return self;
+}
+
+
+-(void)alertDelete{
+    
+    UIAlertController *delete = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *confirmDelete = [UIAlertAction actionWithTitle:@"Delete Task" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action)
+                         {
+                             //Do some thing here
+                             [editingTask deleteInBackground];
+                             [self goBackTwice];
+                             
+                         }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [delete addAction:confirmDelete];
+    [delete addAction:cancel];
+    
+    [self presentViewController:delete animated:YES completion:nil];
+}
 
 /*
 #pragma mark - Navigation

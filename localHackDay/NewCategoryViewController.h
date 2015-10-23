@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewCategoryViewController : UIViewController<UIGestureRecognizerDelegate>
+@interface NewCategoryViewController : UIViewController<UIGestureRecognizerDelegate,UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField *createCategoryTitle;
 @property (weak, nonatomic) IBOutlet UIButton *submitNewCategory;
+
+@property (nonatomic) UITextField *activeField;
+
 
 @end

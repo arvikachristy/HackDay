@@ -1,0 +1,144 @@
+//
+//  LoginViewController.m
+//  localHackDay
+//
+//  Created by Johnson Cheung on 16/10/2015.
+//  Copyright © 2015 team. All rights reserved.
+//
+
+#import "LoginViewController.h"
+#import "RegisterViewController.h"
+#import "MainTabBarController.h"
+#import <Parse/Parse.h>
+
+
+@interface LoginViewController ()
+
+@end
+
+@implementation LoginViewController
+
+@synthesize errorLabel;
+@synthesize usernameBox;
+@synthesize passwordBox;
+@synthesize activeField;
+@synthesize loginButton;
+@synthesize registerButton;
+@synthesize scrollView;
+
+-(void)viewWillAppear:(BOOL)animated{
+    errorLabel.text = @"";
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    passwordBox.secureTextEntry = YES;
+    
+    self.usernameBox.delegate = self;
+    self.passwordBox.delegate = self;
+    
+    [self registerForKeyboardNotifications];
+    UITapGestureRecognizer *tapDismissKB = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKB)];
+    [self.view addGestureRecognizer:tapDismissKB];
+    
+    [self setNeedsStatusBarAppearanceUpdate];
+
+    // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)loginAction:(id)sender {
+    NSString *trimmedUsername = [usernameBox.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *trimmedPassword = [passwordBox.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    
+    if([PFUser logInWithUsername:trimmedUsername password:trimmedPassword] == nil){
+        errorLabel.text = @"Invalid Login";
+        return;
+    }
+    
+    MainTabBarController *home = [[MainTabBarController alloc]init];
+    [self showViewController:home sender:nil];
+}
+
+- (IBAction)registerAction:(id)sender {
+    [self showViewController:[RegisterViewController alloc] sender:nil];
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    activeField = textField;
+}
+
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    [self dismissKB];
+}
+
+// Call this method somewhere in your view controller setup code.
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    [scrollView setContentSize:self.view.frame.size];
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    scrollView.contentInset = contentInsets;
+    scrollView.scrollIndicatorInsets = contentInsets;
+    
+    
+    
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    // Your app might not need or want this behavior.
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    
+    /*
+     CGPoint activeFieldCenter;
+     activeFieldCenter.x = activeField.frame.origin.x + (activeField.frame.size.width);
+     activeFieldCenter.y = activeField.frame.origin.y + (activeField.frame.size.height);
+     */
+    
+    
+    //if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
+    [self.scrollView scrollRectToVisible:activeField.frame animated:YES];
+    //}
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    scrollView.contentInset = contentInsets;
+    scrollView.scrollIndicatorInsets = contentInsets;
+}
+
+-(void)dismissKB{
+    [activeField resignFirstResponder];
+    activeField = nil;
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
+
+@end

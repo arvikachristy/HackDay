@@ -1,40 +1,32 @@
 //
-//  NewCategoryViewController.m
+//  NewFlatmateViewController.m
 //  localHackDay
 //
-//  Created by Johnson Cheung on 13/10/2015.
+//  Created by Johnson Cheung on 22/10/2015.
 //  Copyright © 2015 team. All rights reserved.
 //
 
-#import "NewCategoryViewController.h"
-#import "CategoryViewController.h"
-#import <Parse/parse.h>
+#import "NewFlatmateViewController.h"
+#import <Parse/Parse.h>
 
-@interface NewCategoryViewController ()
-
+@interface NewFlatmateViewController ()
 
 @end
 
-@implementation NewCategoryViewController
-
+@implementation NewFlatmateViewController
+@synthesize flatmateDP;
+@synthesize changeDPButton;
 @synthesize errorLabel;
-@synthesize createCategoryTitle;
-@synthesize submitNewCategory;
+@synthesize flatmateNameTextField;
 @synthesize activeField;
-
-
--(void)viewWillAppear:(BOOL)animated{
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-
-    errorLabel.text = @"";
-    
-}
+@synthesize doneButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"New Category";
-    
-    createCategoryTitle.delegate = self;
+    // Do any additional setup after loading the view from its nib.
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+       self.navigationItem.title = @"New Flatmate";
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(goBack)];
     swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
@@ -42,32 +34,17 @@
     [self.view addGestureRecognizer:swipeRight];
     
     UITapGestureRecognizer *tapDismissKB = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKB)];
-    tapDismissKB.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:tapDismissKB];
     
-    
-    // Do any additional setup after loading the view from its nib.
-}
+    errorLabel.text = @"";
 
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)addSubmitNewCategory:(id)sender{
-    NSString *trimmedTitle = [createCategoryTitle.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    if(trimmedTitle.length < 1){
-        errorLabel.text = @"category title can't be blank";
-        return;
-    }
-    
-    PFObject *category = [PFObject objectWithClassName:@"Category"];
-    category[@"CategoryTitle"] = trimmedTitle;
-    category[@"Owner"] = [PFUser currentUser];
-    [category save];
-    [self goBack];
-}
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     activeField = textField;
@@ -83,8 +60,23 @@
 }
 
 -(void)goBack{
-    NSLog(@"did do this");
-    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(IBAction)clickedDoneButton:(id)sender{
+    NSString *flatmateName = flatmateNameTextField.text;
+    if(flatmateName.length < 1) {
+        errorLabel.text = @"Please Enter A Name";
+        return;
+    }else if (flatmateName.length > 32){
+        errorLabel.text = @"Your Name Is Too Long...Sorry!";
+        return;
+    }
+    PFObject *flatmate = [PFObject objectWithClassName:@"Flatmate"];
+    flatmate[@"Name"] = flatmateName;
+    flatmate[@"TasksCompleted"] = [NSNumber numberWithInteger:0];
+    flatmate[@"Flat"] = [PFUser currentUser];
+    [flatmate save];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

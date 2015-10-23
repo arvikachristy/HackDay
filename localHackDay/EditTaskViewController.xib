@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditTaskViewController">
+            <connections>
+                <outlet property="deleteTaskButton" destination="qzz-Ad-vYf" id="and-2a-QVg"/>
+                <outlet property="editTaskCategoryPicker" destination="Y6P-og-0hX" id="jl7-n2-ZO5"/>
+                <outlet property="editTaskTitle" destination="XjR-5p-wDh" id="1aV-5n-cfr"/>
+                <outlet property="errorLabel" destination="g5W-aT-Yi0" id="WwA-K1-Keb"/>
+                <outlet property="submitEditedTaskButton" destination="1k3-aZ-6i2" id="Saq-bQ-6Ug"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XjR-5p-wDh">
+                    <rect key="frame" x="8" y="110" width="584" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="YaE-yM-xZ6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5W-aT-Yi0">
+                    <rect key="frame" x="8" y="65" width="584" height="37"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="pKs-S7-1Yb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6P-og-0hX">
+                    <rect key="frame" x="8" y="240" width="584" height="85"/>
+                    <animations/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="W0V-aR-9Wx"/>
+                        <outlet property="delegate" destination="-1" id="M7i-e6-MlT"/>
+                    </connections>
+                </pickerView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gge-3V-Hvz">
+                    <rect key="frame" x="8" y="190" width="146" height="42"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="B3E-yR-nKR"/>
+                        <constraint firstAttribute="width" constant="146" id="JG2-Qr-wNd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1k3-aZ-6i2">
+                    <rect key="frame" x="243" y="400" width="115" height="47"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="ZVu-2v-jXf"/>
+                        <constraint firstAttribute="width" constant="115" id="mcw-oU-zSY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <state key="normal" title="Done">
+                        <color key="titleColor" red="0.39027662810000002" green="1" blue="0.4706066525" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="addSubmitEditedTaskButton:" destination="-1" eventType="touchUpInside" id="MRs-6v-tbV"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuW-BE-tRQ">
+                    <rect key="frame" x="403" y="333" width="189" height="42"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="NJn-XN-AZs"/>
+                        <constraint firstAttribute="width" constant="189" id="UZn-rx-Y6a"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <state key="normal" title="Add Categories +">
+                        <color key="titleColor" red="0.39027662810000002" green="1" blue="0.4706066525" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="addCategoriesButton:" destination="-1" eventType="touchUpInside" id="n7B-FD-Q6g"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzz-Ad-vYf">
+                    <rect key="frame" x="243" y="540" width="115" height="52"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="6hL-wc-Nia"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <state key="normal" title="Delete">
+                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="addDeleteTaskButton:" destination="-1" eventType="touchUpInside" id="g1p-6O-y9H"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1k3-aZ-6i2" firstAttribute="leading" secondItem="qzz-Ad-vYf" secondAttribute="leading" id="1w7-Y5-Vyx"/>
+                <constraint firstAttribute="bottom" secondItem="qzz-Ad-vYf" secondAttribute="bottom" constant="8" id="4WJ-IP-d5r"/>
+                <constraint firstItem="XjR-5p-wDh" firstAttribute="trailing" secondItem="Y6P-og-0hX" secondAttribute="trailing" id="Av6-gK-4Xd"/>
+                <constraint firstItem="Gge-3V-Hvz" firstAttribute="leading" secondItem="XjR-5p-wDh" secondAttribute="leading" id="GSp-be-iZ8"/>
+                <constraint firstItem="g5W-aT-Yi0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="RgX-0J-zSW"/>
+                <constraint firstItem="Y6P-og-0hX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-17.5" id="SsP-Tg-wLJ"/>
+                <constraint firstItem="qzz-Ad-vYf" firstAttribute="top" secondItem="1k3-aZ-6i2" secondAttribute="bottom" constant="93" id="Uhu-Ed-2yR"/>
+                <constraint firstItem="Gge-3V-Hvz" firstAttribute="top" secondItem="XjR-5p-wDh" secondAttribute="bottom" constant="50" id="XWC-tc-2d7"/>
+                <constraint firstItem="Y6P-og-0hX" firstAttribute="leading" secondItem="Gge-3V-Hvz" secondAttribute="leading" id="YKT-tU-Hh6"/>
+                <constraint firstItem="XjR-5p-wDh" firstAttribute="leading" secondItem="g5W-aT-Yi0" secondAttribute="leading" id="cjo-WY-lfy"/>
+                <constraint firstItem="1k3-aZ-6i2" firstAttribute="centerX" secondItem="Y6P-og-0hX" secondAttribute="centerX" id="gEK-dt-XTR"/>
+                <constraint firstItem="Y6P-og-0hX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="iGc-M4-XpE"/>
+                <constraint firstItem="Y6P-og-0hX" firstAttribute="top" secondItem="Gge-3V-Hvz" secondAttribute="bottom" constant="8" symbolic="YES" id="l8z-Hr-Zta"/>
+                <constraint firstItem="Y6P-og-0hX" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="mW2-tf-z9l"/>
+                <constraint firstItem="iuW-BE-tRQ" firstAttribute="trailing" secondItem="Y6P-og-0hX" secondAttribute="trailing" id="oRc-bx-GHW"/>
+                <constraint firstItem="iuW-BE-tRQ" firstAttribute="top" secondItem="Y6P-og-0hX" secondAttribute="bottom" constant="8" symbolic="YES" id="uj2-PH-Z06"/>
+                <constraint firstItem="g5W-aT-Yi0" firstAttribute="trailing" secondItem="XjR-5p-wDh" secondAttribute="trailing" id="vpW-Wx-aOo"/>
+                <constraint firstItem="XjR-5p-wDh" firstAttribute="top" secondItem="g5W-aT-Yi0" secondAttribute="bottom" constant="8" symbolic="YES" id="yoX-D4-KbS"/>
+                <constraint firstItem="qzz-Ad-vYf" firstAttribute="trailing" secondItem="1k3-aZ-6i2" secondAttribute="trailing" id="zfp-Ot-KvF"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
