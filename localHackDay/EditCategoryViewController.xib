@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditCategoryViewController">
+            <connections>
+                <outlet property="editCategoryTitle" destination="AXo-KY-3kO" id="8ej-gp-r1K"/>
+                <outlet property="errorLabel" destination="yom-Wt-pyp" id="438-9u-UND"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AXo-KY-3kO">
+                    <rect key="frame" x="8" y="215" width="584" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yom-Wt-pyp">
+                    <rect key="frame" x="8" y="162" width="584" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="4q5-wQ-6i8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stP-68-C9L">
+                    <rect key="frame" x="248" y="271" width="104" height="57"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="57" id="8cL-AX-E41"/>
+                        <constraint firstAttribute="width" constant="104" id="dhS-AG-4Wo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <state key="normal" title="Submit">
+                        <color key="titleColor" red="0.39027662810000002" green="1" blue="0.4706066525" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="addSubmitEditedCategoryButton:" destination="-1" eventType="touchUpInside" id="FeX-15-bk8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wpb-oq-QQt">
+                    <rect key="frame" x="243" y="396" width="115" height="52"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="32B-oQ-phV"/>
+                        <constraint firstAttribute="width" constant="115" id="ybv-NR-RjQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <state key="normal" title="Delete">
+                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="addDeleteTaskButton:" destination="-1" eventType="touchUpInside" id="11h-ZU-qoj"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="stP-68-C9L" firstAttribute="top" secondItem="AXo-KY-3kO" secondAttribute="bottom" constant="26" id="95P-ZE-vMG"/>
+                <constraint firstItem="AXo-KY-3kO" firstAttribute="leading" secondItem="yom-Wt-pyp" secondAttribute="leading" id="AF2-20-qm5"/>
+                <constraint firstItem="AXo-KY-3kO" firstAttribute="top" secondItem="yom-Wt-pyp" secondAttribute="bottom" constant="23" id="BaV-BJ-izI"/>
+                <constraint firstItem="stP-68-C9L" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="JQ9-fE-IIB"/>
+                <constraint firstItem="yom-Wt-pyp" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="K4m-YV-1oj"/>
+                <constraint firstItem="AXo-KY-3kO" firstAttribute="centerX" secondItem="stP-68-C9L" secondAttribute="centerX" id="cml-s4-8KC"/>
+                <constraint firstItem="yom-Wt-pyp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="oNe-bo-mHq"/>
+                <constraint firstItem="AXo-KY-3kO" firstAttribute="trailing" secondItem="yom-Wt-pyp" secondAttribute="trailing" id="stw-Tp-G1P"/>
+                <constraint firstItem="Wpb-oq-QQt" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" constant="-144" id="vbR-m2-aB9"/>
+                <constraint firstItem="Wpb-oq-QQt" firstAttribute="centerX" secondItem="stP-68-C9L" secondAttribute="centerX" id="vsa-YT-HYe"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

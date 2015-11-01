@@ -12,34 +12,39 @@
 		18EB3F4B1BC94F7700AE1581 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EB3F4A1BC94F7700AE1581 /* Images.xcassets */; };
 		18EB3F4E1BC94F7700AE1581 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EB3F4C1BC94F7700AE1581 /* LaunchScreen.xib */; };
 		18EB3F5A1BC94F7700AE1581 /* localHackDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EB3F591BC94F7700AE1581 /* localHackDayTests.m */; };
-		18EB3F661BC9553600AE1581 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EB3F641BC9553600AE1581 /* RegisterViewController.m */; };
-		18EB3F671BC9553600AE1581 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EB3F651BC9553600AE1581 /* RegisterViewController.xib */; };
-		731986071BCDAAF5007D5B13 /* NewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731986051BCDAAF5007D5B13 /* NewTaskViewController.m */; settings = {ASSET_TAGS = (); }; };
-		731986081BCDAAF5007D5B13 /* NewTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731986061BCDAAF5007D5B13 /* NewTaskViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		7319860C1BCDABD4007D5B13 /* NewCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319860A1BCDABD4007D5B13 /* NewCategoryViewController.m */; settings = {ASSET_TAGS = (); }; };
-		7319860D1BCDABD4007D5B13 /* NewCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7319860B1BCDABD4007D5B13 /* NewCategoryViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		7323900E1BD3971A001AA917 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7323900D1BD3971A001AA917 /* Logo.png */; settings = {ASSET_TAGS = (); }; };
-		7324C08C1BD8481A0049465C /* MyFlatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7324C08A1BD8481A0049465C /* MyFlatViewController.m */; settings = {ASSET_TAGS = (); }; };
-		7324C08D1BD8481A0049465C /* MyFlatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7324C08B1BD8481A0049465C /* MyFlatViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		7388DCEF1BD3B13B0088C824 /* AvailableTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7388DCED1BD3B13B0088C824 /* AvailableTasksViewController.m */; settings = {ASSET_TAGS = (); }; };
-		7388DCF01BD3B13B0088C824 /* AvailableTasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7388DCEE1BD3B13B0088C824 /* AvailableTasksViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		7392C6081BD13D5300D2549A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7392C6061BD13D5300D2549A /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
-		7392C6091BD13D5300D2549A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7392C6071BD13D5300D2549A /* LoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		7392C60D1BD1422500D2549A /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7392C60B1BD1422400D2549A /* CategoryViewController.m */; settings = {ASSET_TAGS = (); }; };
-		7392C60E1BD1422500D2549A /* CategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7392C60C1BD1422400D2549A /* CategoryViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		739DB4E21BD2D9E900336726 /* SelectedCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739DB4E01BD2D9E900336726 /* SelectedCategoryViewController.m */; settings = {ASSET_TAGS = (); }; };
-		739DB4E31BD2D9E900336726 /* SelectedCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739DB4E11BD2D9E900336726 /* SelectedCategoryViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		739DB4F61BD3010000336726 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739DB4F41BD3010000336726 /* MainTabBarController.m */; settings = {ASSET_TAGS = (); }; };
-		739DB4F71BD3010000336726 /* MainTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739DB4F51BD3010000336726 /* MainTabBarController.xib */; settings = {ASSET_TAGS = (); }; };
-		73AA9B0F1BD4DBFC00F1ADC9 /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AA9B0D1BD4DBFC00F1ADC9 /* EditTaskViewController.m */; settings = {ASSET_TAGS = (); }; };
-		73AA9B101BD4DBFC00F1ADC9 /* EditTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA9B0E1BD4DBFC00F1ADC9 /* EditTaskViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		73AAA74C1BD8ECFA00B2906B /* settingsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73AAA74B1BD8ECFA00B2906B /* settingsIcon.png */; settings = {ASSET_TAGS = (); }; };
-		73AAA7561BD8FA1800B2906B /* settingsIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 73AAA7551BD8FA1800B2906B /* settingsIcon2.png */; settings = {ASSET_TAGS = (); }; };
-		73AAA75A1BD9005000B2906B /* NewFlatmateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AAA7581BD9005000B2906B /* NewFlatmateViewController.m */; settings = {ASSET_TAGS = (); }; };
-		73AAA75B1BD9005000B2906B /* NewFlatmateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AAA7591BD9005000B2906B /* NewFlatmateViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		73B2B0661BDAD8F600AA21E8 /* loggedFlatmate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B2B0651BDAD8F600AA21E8 /* loggedFlatmate.m */; settings = {ASSET_TAGS = (); }; };
-		73CCD2501BD43E5C00CD3678 /* SelectedTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CCD24E1BD43E5C00CD3678 /* SelectedTaskViewController.m */; settings = {ASSET_TAGS = (); }; };
-		73CCD2511BD43E5C00CD3678 /* SelectedTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CCD24F1BD43E5C00CD3678 /* SelectedTaskViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		7302EF1A1BE032DD006D594D /* EditCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7302EF181BE032DD006D594D /* EditCategoryViewController.m */; };
+		7302EF1B1BE032DD006D594D /* EditCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7302EF191BE032DD006D594D /* EditCategoryViewController.xib */; };
+		731986071BCDAAF5007D5B13 /* NewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731986051BCDAAF5007D5B13 /* NewTaskViewController.m */; };
+		731986081BCDAAF5007D5B13 /* NewTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731986061BCDAAF5007D5B13 /* NewTaskViewController.xib */; };
+		7319860C1BCDABD4007D5B13 /* NewCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319860A1BCDABD4007D5B13 /* NewCategoryViewController.m */; };
+		7319860D1BCDABD4007D5B13 /* NewCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7319860B1BCDABD4007D5B13 /* NewCategoryViewController.xib */; };
+		7323900E1BD3971A001AA917 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7323900D1BD3971A001AA917 /* Logo.png */; };
+		7324C08C1BD8481A0049465C /* MyFlatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7324C08A1BD8481A0049465C /* MyFlatViewController.m */; };
+		7324C08D1BD8481A0049465C /* MyFlatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7324C08B1BD8481A0049465C /* MyFlatViewController.xib */; };
+		7388DCEF1BD3B13B0088C824 /* AvailableTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7388DCED1BD3B13B0088C824 /* AvailableTasksViewController.m */; };
+		7388DCF01BD3B13B0088C824 /* AvailableTasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7388DCEE1BD3B13B0088C824 /* AvailableTasksViewController.xib */; };
+		7392C6081BD13D5300D2549A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7392C6061BD13D5300D2549A /* LoginViewController.m */; };
+		7392C6091BD13D5300D2549A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7392C6071BD13D5300D2549A /* LoginViewController.xib */; };
+		7392C60D1BD1422500D2549A /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7392C60B1BD1422400D2549A /* CategoryViewController.m */; };
+		7392C60E1BD1422500D2549A /* CategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7392C60C1BD1422400D2549A /* CategoryViewController.xib */; };
+		739DB4E21BD2D9E900336726 /* SelectedCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739DB4E01BD2D9E900336726 /* SelectedCategoryViewController.m */; };
+		739DB4E31BD2D9E900336726 /* SelectedCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739DB4E11BD2D9E900336726 /* SelectedCategoryViewController.xib */; };
+		739DB4F61BD3010000336726 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739DB4F41BD3010000336726 /* MainTabBarController.m */; };
+		739DB4F71BD3010000336726 /* MainTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739DB4F51BD3010000336726 /* MainTabBarController.xib */; };
+		73AA9B0F1BD4DBFC00F1ADC9 /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AA9B0D1BD4DBFC00F1ADC9 /* EditTaskViewController.m */; };
+		73AA9B101BD4DBFC00F1ADC9 /* EditTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA9B0E1BD4DBFC00F1ADC9 /* EditTaskViewController.xib */; };
+		73AAA74C1BD8ECFA00B2906B /* settingsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73AAA74B1BD8ECFA00B2906B /* settingsIcon.png */; };
+		73AAA7561BD8FA1800B2906B /* settingsIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 73AAA7551BD8FA1800B2906B /* settingsIcon2.png */; };
+		73AAA75A1BD9005000B2906B /* NewFlatmateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AAA7581BD9005000B2906B /* NewFlatmateViewController.m */; };
+		73AAA75B1BD9005000B2906B /* NewFlatmateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AAA7591BD9005000B2906B /* NewFlatmateViewController.xib */; };
+		73B25A1F1BE4E91600D8A639 /* MyTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B25A1D1BE4E91600D8A639 /* MyTasksViewController.m */; };
+		73B25A201BE4E91600D8A639 /* MyTasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B25A1E1BE4E91600D8A639 /* MyTasksViewController.xib */; };
+		73C1E9251BDC2AD4001565F4 /* RegisterFlatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C1E9231BDC2AD4001565F4 /* RegisterFlatViewController.m */; };
+		73C1E9261BDC2AD4001565F4 /* RegisterFlatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73C1E9241BDC2AD4001565F4 /* RegisterFlatViewController.xib */; };
+		73C1E92A1BDC2D16001565F4 /* RegisterUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C1E9281BDC2D16001565F4 /* RegisterUserViewController.m */; };
+		73C1E92B1BDC2D16001565F4 /* RegisterUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73C1E9291BDC2D16001565F4 /* RegisterUserViewController.xib */; };
+		73CCD2501BD43E5C00CD3678 /* SelectedTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CCD24E1BD43E5C00CD3678 /* SelectedTaskViewController.m */; };
+		73CCD2511BD43E5C00CD3678 /* SelectedTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CCD24F1BD43E5C00CD3678 /* SelectedTaskViewController.xib */; };
 		906356691BC9625F00FD116A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906356671BC9625F00FD116A /* Bolts.framework */; };
 		9063566A1BC9625F00FD116A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906356681BC9625F00FD116A /* Parse.framework */; };
 		9063566C1BC9627F00FD116A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9063566B1BC9627F00FD116A /* AudioToolbox.framework */; };
@@ -75,9 +80,9 @@
 		18EB3F531BC94F7700AE1581 /* localHackDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = localHackDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EB3F581BC94F7700AE1581 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18EB3F591BC94F7700AE1581 /* localHackDayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = localHackDayTests.m; sourceTree = "<group>"; };
-		18EB3F631BC9553600AE1581 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
-		18EB3F641BC9553600AE1581 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		18EB3F651BC9553600AE1581 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		7302EF171BE032DD006D594D /* EditCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCategoryViewController.h; sourceTree = "<group>"; };
+		7302EF181BE032DD006D594D /* EditCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditCategoryViewController.m; sourceTree = "<group>"; };
+		7302EF191BE032DD006D594D /* EditCategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditCategoryViewController.xib; sourceTree = "<group>"; };
 		731986041BCDAAF5007D5B13 /* NewTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTaskViewController.h; sourceTree = "<group>"; };
 		731986051BCDAAF5007D5B13 /* NewTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTaskViewController.m; sourceTree = "<group>"; };
 		731986061BCDAAF5007D5B13 /* NewTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTaskViewController.xib; sourceTree = "<group>"; };
@@ -111,8 +116,15 @@
 		73AAA7571BD9005000B2906B /* NewFlatmateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFlatmateViewController.h; sourceTree = "<group>"; };
 		73AAA7581BD9005000B2906B /* NewFlatmateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFlatmateViewController.m; sourceTree = "<group>"; };
 		73AAA7591BD9005000B2906B /* NewFlatmateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewFlatmateViewController.xib; sourceTree = "<group>"; };
-		73B2B0641BDAD8F600AA21E8 /* loggedFlatmate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loggedFlatmate.h; sourceTree = "<group>"; };
-		73B2B0651BDAD8F600AA21E8 /* loggedFlatmate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loggedFlatmate.m; sourceTree = "<group>"; };
+		73B25A1C1BE4E91600D8A639 /* MyTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTasksViewController.h; sourceTree = "<group>"; };
+		73B25A1D1BE4E91600D8A639 /* MyTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTasksViewController.m; sourceTree = "<group>"; };
+		73B25A1E1BE4E91600D8A639 /* MyTasksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTasksViewController.xib; sourceTree = "<group>"; };
+		73C1E9221BDC2AD4001565F4 /* RegisterFlatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterFlatViewController.h; sourceTree = "<group>"; };
+		73C1E9231BDC2AD4001565F4 /* RegisterFlatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterFlatViewController.m; sourceTree = "<group>"; };
+		73C1E9241BDC2AD4001565F4 /* RegisterFlatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterFlatViewController.xib; sourceTree = "<group>"; };
+		73C1E9271BDC2D16001565F4 /* RegisterUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterUserViewController.h; sourceTree = "<group>"; };
+		73C1E9281BDC2D16001565F4 /* RegisterUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterUserViewController.m; sourceTree = "<group>"; };
+		73C1E9291BDC2D16001565F4 /* RegisterUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterUserViewController.xib; sourceTree = "<group>"; };
 		73CCD24D1BD43E5C00CD3678 /* SelectedTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedTaskViewController.h; sourceTree = "<group>"; };
 		73CCD24E1BD43E5C00CD3678 /* SelectedTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedTaskViewController.m; sourceTree = "<group>"; };
 		73CCD24F1BD43E5C00CD3678 /* SelectedTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectedTaskViewController.xib; sourceTree = "<group>"; };
@@ -199,8 +211,6 @@
 				18EB3F411BC94F7600AE1581 /* AppDelegate.h */,
 				18EB3F421BC94F7700AE1581 /* AppDelegate.m */,
 				7324C0891BD8481A0049465C /* MyFlatViewController.h */,
-				73B2B0641BDAD8F600AA21E8 /* loggedFlatmate.h */,
-				73B2B0651BDAD8F600AA21E8 /* loggedFlatmate.m */,
 				7324C08A1BD8481A0049465C /* MyFlatViewController.m */,
 				7324C08B1BD8481A0049465C /* MyFlatViewController.xib */,
 				73AAA7571BD9005000B2906B /* NewFlatmateViewController.h */,
@@ -209,9 +219,12 @@
 				7392C6051BD13D5300D2549A /* LoginViewController.h */,
 				7392C6061BD13D5300D2549A /* LoginViewController.m */,
 				7392C6071BD13D5300D2549A /* LoginViewController.xib */,
-				18EB3F631BC9553600AE1581 /* RegisterViewController.h */,
-				18EB3F641BC9553600AE1581 /* RegisterViewController.m */,
-				18EB3F651BC9553600AE1581 /* RegisterViewController.xib */,
+				73C1E9271BDC2D16001565F4 /* RegisterUserViewController.h */,
+				73C1E9281BDC2D16001565F4 /* RegisterUserViewController.m */,
+				73C1E9291BDC2D16001565F4 /* RegisterUserViewController.xib */,
+				73C1E9221BDC2AD4001565F4 /* RegisterFlatViewController.h */,
+				73C1E9231BDC2AD4001565F4 /* RegisterFlatViewController.m */,
+				73C1E9241BDC2AD4001565F4 /* RegisterFlatViewController.xib */,
 				731986041BCDAAF5007D5B13 /* NewTaskViewController.h */,
 				731986051BCDAAF5007D5B13 /* NewTaskViewController.m */,
 				731986061BCDAAF5007D5B13 /* NewTaskViewController.xib */,
@@ -236,6 +249,12 @@
 				73AA9B0C1BD4DBFC00F1ADC9 /* EditTaskViewController.h */,
 				73AA9B0D1BD4DBFC00F1ADC9 /* EditTaskViewController.m */,
 				73AA9B0E1BD4DBFC00F1ADC9 /* EditTaskViewController.xib */,
+				7302EF171BE032DD006D594D /* EditCategoryViewController.h */,
+				7302EF181BE032DD006D594D /* EditCategoryViewController.m */,
+				7302EF191BE032DD006D594D /* EditCategoryViewController.xib */,
+				73B25A1C1BE4E91600D8A639 /* MyTasksViewController.h */,
+				73B25A1D1BE4E91600D8A639 /* MyTasksViewController.m */,
+				73B25A1E1BE4E91600D8A639 /* MyTasksViewController.xib */,
 				18EB3F4A1BC94F7700AE1581 /* Images.xcassets */,
 				18EB3F4C1BC94F7700AE1581 /* LaunchScreen.xib */,
 				18EB3F3D1BC94F7600AE1581 /* Supporting Files */,
@@ -350,7 +369,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7302EF1B1BE032DD006D594D /* EditCategoryViewController.xib in Resources */,
+				73B25A201BE4E91600D8A639 /* MyTasksViewController.xib in Resources */,
 				73AAA7561BD8FA1800B2906B /* settingsIcon2.png in Resources */,
+				73C1E92B1BDC2D16001565F4 /* RegisterUserViewController.xib in Resources */,
 				7392C60E1BD1422500D2549A /* CategoryViewController.xib in Resources */,
 				7392C6091BD13D5300D2549A /* LoginViewController.xib in Resources */,
 				731986081BCDAAF5007D5B13 /* NewTaskViewController.xib in Resources */,
@@ -360,12 +382,12 @@
 				73AAA74C1BD8ECFA00B2906B /* settingsIcon.png in Resources */,
 				7388DCF01BD3B13B0088C824 /* AvailableTasksViewController.xib in Resources */,
 				73AA9B101BD4DBFC00F1ADC9 /* EditTaskViewController.xib in Resources */,
+				73C1E9261BDC2AD4001565F4 /* RegisterFlatViewController.xib in Resources */,
 				18EB3F4E1BC94F7700AE1581 /* LaunchScreen.xib in Resources */,
 				18EB3F4B1BC94F7700AE1581 /* Images.xcassets in Resources */,
 				7319860D1BCDABD4007D5B13 /* NewCategoryViewController.xib in Resources */,
 				739DB4E31BD2D9E900336726 /* SelectedCategoryViewController.xib in Resources */,
 				73CCD2511BD43E5C00CD3678 /* SelectedTaskViewController.xib in Resources */,
-				18EB3F671BC9553600AE1581 /* RegisterViewController.xib in Resources */,
 				73AAA75B1BD9005000B2906B /* NewFlatmateViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,19 +408,21 @@
 			files = (
 				7392C60D1BD1422500D2549A /* CategoryViewController.m in Sources */,
 				7324C08C1BD8481A0049465C /* MyFlatViewController.m in Sources */,
+				73C1E9251BDC2AD4001565F4 /* RegisterFlatViewController.m in Sources */,
 				7392C6081BD13D5300D2549A /* LoginViewController.m in Sources */,
 				7319860C1BCDABD4007D5B13 /* NewCategoryViewController.m in Sources */,
 				73AA9B0F1BD4DBFC00F1ADC9 /* EditTaskViewController.m in Sources */,
 				18EB3F431BC94F7700AE1581 /* AppDelegate.m in Sources */,
+				73C1E92A1BDC2D16001565F4 /* RegisterUserViewController.m in Sources */,
 				739DB4E21BD2D9E900336726 /* SelectedCategoryViewController.m in Sources */,
 				7388DCEF1BD3B13B0088C824 /* AvailableTasksViewController.m in Sources */,
 				739DB4F61BD3010000336726 /* MainTabBarController.m in Sources */,
 				73CCD2501BD43E5C00CD3678 /* SelectedTaskViewController.m in Sources */,
+				7302EF1A1BE032DD006D594D /* EditCategoryViewController.m in Sources */,
 				731986071BCDAAF5007D5B13 /* NewTaskViewController.m in Sources */,
 				18EB3F401BC94F7600AE1581 /* main.m in Sources */,
-				18EB3F661BC9553600AE1581 /* RegisterViewController.m in Sources */,
-				73B2B0661BDAD8F600AA21E8 /* loggedFlatmate.m in Sources */,
 				73AAA75A1BD9005000B2906B /* NewFlatmateViewController.m in Sources */,
+				73B25A1F1BE4E91600D8A639 /* MyTasksViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

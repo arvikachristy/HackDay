@@ -64,9 +64,18 @@
     
     PFObject *category = [PFObject objectWithClassName:@"Category"];
     category[@"CategoryTitle"] = trimmedTitle;
-    category[@"Owner"] = [PFUser currentUser];
-    [category save];
-    [self goBack];
+    PFUser *currentUser = [PFUser currentUser];
+    category[@"Owner"] = currentUser[@"Flat"];
+    [category saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (!error) {
+            if (succeeded==YES) {
+                [self goBack];
+            }
+        }else{
+            NSLog(@"%@",error);
+        }
+        
+    }];
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
@@ -83,7 +92,6 @@
 }
 
 -(void)goBack{
-    NSLog(@"did do this");
     //[self dismissViewControllerAnimated:YES completion:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }

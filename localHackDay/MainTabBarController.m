@@ -7,9 +7,11 @@
 //
 
 #import "MainTabBarController.h"
-#import "CategoryViewController.h"
+#import "MyTasksViewController.h"
 #import "AvailableTasksViewController.h"
+#import "CategoryViewController.h"
 #import "MyFlatViewController.h"
+#import "LoginViewController.h"
 
 @interface MainTabBarController ()
 
@@ -42,10 +44,12 @@
 -(instancetype)init{
     self = [super init];
     
-    CategoryViewController *categories = [[CategoryViewController alloc]init];
-    UINavigationController *categoriesNav = [[UINavigationController alloc]initWithRootViewController:categories];
+    MyTasksViewController *myTasks = [[MyTasksViewController alloc]init];
+    UINavigationController *myTasksNav = [[UINavigationController alloc]initWithRootViewController:myTasks];
     AvailableTasksViewController *availableTasks = [[AvailableTasksViewController alloc]init];
     UINavigationController *availableTasksNav = [[UINavigationController alloc]initWithRootViewController:availableTasks];
+    CategoryViewController *categories = [[CategoryViewController alloc]init];
+    UINavigationController *categoriesNav = [[UINavigationController alloc]initWithRootViewController:categories];
     MyFlatViewController *myFlat = [[MyFlatViewController alloc]init];
     UINavigationController *myFlatNav = [[UINavigationController alloc]initWithRootViewController:myFlat];
    
@@ -61,18 +65,20 @@
     availableTasksNav.navigationBar.tintColor = myMintGreen;
     */
     
-    [self setNavigationStyle:categoriesNav];
+    [self setNavigationStyle:myTasksNav];
     [self setNavigationStyle:availableTasksNav];
+    [self setNavigationStyle:categoriesNav];
     [self setNavigationStyle:myFlatNav];
-    
-    categoriesNav.tabBarItem.title = @"Categories";
+
+    myTasksNav.tabBarItem.title = @"My Tasks";
     availableTasksNav.tabBarItem.title = @"Available Tasks";
-    myFlatNav.tabBarItem.title = @"Settings";
+    categoriesNav.tabBarItem.title = @"Categories";
+    myFlatNav.tabBarItem.title = @"My Flat";
     
    // categories.tabBarItem.image = ;
     //availableTasks.tabBarItem.image = ;
 
-    self.viewControllers = [[NSArray alloc]initWithObjects:availableTasksNav, categoriesNav, myFlatNav, nil];
+    self.viewControllers = [[NSArray alloc]initWithObjects:myTasksNav, availableTasksNav, categoriesNav, myFlatNav, nil];
     
     
     return self;

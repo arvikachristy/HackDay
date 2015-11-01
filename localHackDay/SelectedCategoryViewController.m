@@ -9,6 +9,7 @@
 #import "SelectedCategoryViewController.h"
 #import "NewTaskViewController.h"
 #import "SelectedTaskViewController.h"
+#import "EditCategoryViewController.h"
 #import <Parse/parse.h>
 
 @interface SelectedCategoryViewController ()
@@ -19,7 +20,6 @@
 @synthesize tasksTableView;
 @synthesize tasks;
 
-@synthesize addTaskButton;
 
 
 
@@ -40,6 +40,16 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 
     self.navigationItem.title = selectedCategory[@"CategoryTitle"];
+    
+    UIBarButtonItem *addTaskButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                  target:self
+                                                                                  action:@selector(addTask)];
+    UIBarButtonItem *editCategoryButton = [[UIBarButtonItem alloc]initWithTitle:@"Edit"
+                                                                          style:UIBarButtonItemStyleDone
+                                                                         target:self
+                                                                         action:@selector(editCategory)];
+    
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:addTaskButton, editCategoryButton, nil]];
     [self fetchTasksFromDB];
     
 }
@@ -105,8 +115,13 @@
     }];
 }
 
-- (IBAction)addTaskButton:(id)sender {
+-(void)addTask{
     [self showViewController:[NewTaskViewController alloc]  sender:nil];
+}
+
+-(void)editCategory{
+    EditCategoryViewController *editCategoryVC = [[EditCategoryViewController alloc]initWithCategory:selectedCategory];
+    [self showViewController:editCategoryVC sender:nil];
 }
 
 -(void)goBack{

@@ -7,7 +7,8 @@
 //
 
 #import "LoginViewController.h"
-#import "RegisterViewController.h"
+#import "RegisterUserViewController.h"
+#import "RegisterFlatViewController.h"
 #import "MainTabBarController.h"
 #import <Parse/Parse.h>
 
@@ -55,18 +56,39 @@
     NSString *trimmedUsername = [usernameBox.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *trimmedPassword = [passwordBox.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
+    [PFUser logInWithUsernameInBackground:trimmedUsername password:trimmedPassword block:^(PFUser * _Nullable user, NSError * _Nullable error) {
+        if (!error) {
+            PFUser *currentUser = [PFUser currentUser];
+            PFObject *usersFlat = currentUser[@"Flat"];
+            
+            
+            if (usersFlat.objectId) {
+                MainTabBarController *home = [[MainTabBarController alloc]init];
+                [self showViewController:home sender:nil];
+            }else{
+                RegisterFlatViewController *regFlat = [[RegisterFlatViewController alloc]init];
+                [self showViewController:regFlat sender:nil];
+            }
+        }
+        if (error) {
+            NSLog(@"%@",error);
+            errorLabel.text = @"Invalid Login";
+            return;
+        };
+    }];
     
-    if([PFUser logInWithUsername:trimmedUsername password:trimmedPassword] == nil){
+   /* if([PFUser logInWithUsername:trimmedUsername password:trimmedPassword] == nil){
         errorLabel.text = @"Invalid Login";
         return;
-    }
+    }*/
     
-    MainTabBarController *home = [[MainTabBarController alloc]init];
-    [self showViewController:home sender:nil];
+    
+    
+
 }
 
 - (IBAction)registerAction:(id)sender {
-    [self showViewController:[RegisterViewController alloc] sender:nil];
+    [self showViewController:[RegisterUserViewController alloc] sender:nil];
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{

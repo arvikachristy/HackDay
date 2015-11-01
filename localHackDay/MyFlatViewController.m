@@ -10,6 +10,7 @@
 #import "NewFlatmateViewController.h"
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface MyFlatViewController ()
 
@@ -20,7 +21,6 @@
 @synthesize leaderboardTableview;
 @synthesize flatMates;
 @synthesize addFlatmateButton;
-@synthesize changeUserButton;
 @synthesize signOutButton;
 
 - (void)viewDidLoad {
@@ -28,15 +28,24 @@
     // Do any additional setup after loading the view from its nib.
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    PFUser *myFlat = [PFUser currentUser];
-    self.navigationItem.title = myFlat[@"flatName"];
-    UIImage *settingsIcon = [UIImage imageNamed:@"settingsIcon2.png"];
     
+    PFUser *me = [PFUser currentUser];
+    PFObject *myFlat = me[@"Flat"];
+    [myFlat fetchIfNeededInBackgroundWithBlock:^(PFObject * _Nullable flat, NSError * _Nullable error) {
+        if (!error) {
+            self.navigationItem.title = myFlat[@"FlatName"];
+        }else{
+            NSLog(@"%@",error);
+        }
+    }];
+    
+    UIImage *settingsIcon = [UIImage imageNamed:@"settingsIcon2.png"];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:settingsIcon style:UIBarButtonItemStyleDone target:nil action:nil];
+    
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
-    //[self fetchFlatmatesFromDB];
     flatMates = [[NSMutableArray alloc]init];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -58,28 +67,57 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-        static NSString *CellIdentifier = @"Cell";
-        
-        [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-        
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier
-                                                                forIndexPath:indexPath];
-        
-        if ([flatMates count] < 1) {
-            return cell;
-        }
-        PFObject *flatmate = [flatMates objectAtIndex:indexPath.row];
-        
-        cell.textLabel.text = flatmate[@"Name"];
+//    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell2 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"Cell"];
+    cell2.indentationLevel = 0;
     
-        return cell;
+    UIColor *myMintGreen = [UIColor colorWithRed:0.39 green:1.00 blue:0.47 alpha:1.0];
+
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = myMintGreen;
+    [cell2 setSelectedBackgroundView:bgColorView];
+    
+    [tableView registerClass:[cell2 class] forCellReuseIdentifier:@"Cell"];
+    
+    
+    //UITableViewCell *cell2 = [tableView dequeueReusableCellWithIdentifier:CellIdentifier
+  //                                                          forIndexPath:indexPath];
+    
+    if ([flatMates count] < 1) {
+        return cell2;
+    }
+    
+    
+    PFObject *flatmate = [flatMates objectAtIndex:indexPath.row];
+    cell2.textLabel.text = flatmate[@"Name"];
+    NSNumber *countComplete = flatmate[@"TasksCompleted"];
+    cell2.detailTextLabel.text = [countComplete stringValue];
+    PFFile *flatmateDP = flatmate[@"Image"];
+    [flatmateDP getDataInBackgroundWithBlock:^(NSData * _Nullable imageData, NSError * _Nullable error) {
+        if(!error){
+            UIImage *dp = [UIImage imageWithData:imageData];
+            cell2.imageView.layer.cornerRadius = dp.size.width / 2;
+            cell2.imageView.layer.masksToBounds = YES;
+            cell2.imageView.image = dp;
+
+            //return cell;
+            
+        }else{
+            NSLog(@"%@",error);
+            
+        }
+    }];
+    
+    return cell2;
 
 }
 
 -(void) fetchFlatmatesFromDB{
     [flatMates removeAllObjects];
-    PFQuery *query = [PFQuery queryWithClassName:@"Flatmate"];
-    [query whereKey:@"Flat" equalTo:[PFUser currentUser]];
+    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    PFUser *currentUser = [PFUser currentUser];
+    [query whereKey:@"Flat" equalTo:currentUser[@"Flat"]];
+    [query orderByDescending:@"TasksCompleted"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if(!error){
             for (PFObject *object in objects) {
@@ -96,15 +134,42 @@
 }
 
 -(IBAction)addflatMates:(id)sender{
-    [self showViewController:[NewFlatmateViewController alloc] sender:nil];
+    [self alertSuccess];
 }
 
 -(IBAction)signOutFlat:(id)sender{
     [PFUser logOut];
+
+    UIViewController *root =  [UIApplication sharedApplication].keyWindow.rootViewController;
+    if ([root isKindOfClass:[LoginViewController class]]) {
+        [self dismissViewControllerAnimated:NO completion:nil];
+    }else{
+        LoginViewController *login = [[LoginViewController alloc]init];
+        [[UIApplication sharedApplication].keyWindow setRootViewController:login];
+        [self dismissViewControllerAnimated:NO completion:nil];
+    }
     
-    [self.tabBarController dismissViewControllerAnimated:NO completion:nil];
-    //[self showViewController:[LoginViewController alloc] sender:nil];
 }
+
+
+-(void)alertSuccess{
+    
+    
+    
+    PFUser *currentUser = [PFUser currentUser];
+    PFObject *myFlat = currentUser[@"Flat"];
+
+    NSString *inviteCode = myFlat.objectId;
+    
+    UIAlertController *sucess = [UIAlertController alertControllerWithTitle:inviteCode message:@"Share this code with your flatmates to invite them! (SCREENSHOT)" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    
+    [sucess addAction:ok];
+    
+    [self presentViewController:sucess animated:YES completion:nil];
+}
+
 
 /*
 #pragma mark - Navigation

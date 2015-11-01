@@ -16,40 +16,31 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LhM-o0-r0g">
-                    <rect key="frame" x="8" y="117" width="584" height="483"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LhM-o0-r0g">
+                    <rect key="frame" x="8" y="33" width="584" height="517"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="483" id="fdb-4O-Clu"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="fdb-4O-Clu"/>
+                        </mask>
+                    </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="6Ul-RB-0ZU"/>
                         <outlet property="delegate" destination="-1" id="rcJ-LJ-ptZ"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRg-Ci-Iqw">
-                    <rect key="frame" x="407" y="55" width="185" height="54"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="185" id="ex9-5t-Rjd"/>
-                        <constraint firstAttribute="height" constant="54" id="ipC-Tn-y0t"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                    <state key="normal" title="Add Category + ">
-                        <color key="titleColor" red="0.39215686274509803" green="1" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="addCategoriesButton:" destination="-1" eventType="touchDown" id="VpO-cd-GbI"/>
-                    </connections>
-                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="LhM-o0-r0g" firstAttribute="trailing" secondItem="YRg-Ci-Iqw" secondAttribute="trailing" id="3CE-Lq-XgY"/>
-                <constraint firstItem="YRg-Ci-Iqw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="55" id="6wh-eO-1Ds"/>
-                <constraint firstAttribute="bottom" secondItem="LhM-o0-r0g" secondAttribute="bottom" id="PjG-Ir-bO3"/>
+                <constraint firstAttribute="bottomMargin" secondItem="LhM-o0-r0g" secondAttribute="bottom" constant="42" id="PjG-Ir-bO3"/>
                 <constraint firstItem="LhM-o0-r0g" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="Rcw-Zk-DZE"/>
-                <constraint firstItem="LhM-o0-r0g" firstAttribute="top" secondItem="YRg-Ci-Iqw" secondAttribute="bottom" constant="8" symbolic="YES" id="dKj-GI-e85"/>
                 <constraint firstItem="LhM-o0-r0g" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="oFL-d3-93Y"/>
+                <constraint firstItem="LhM-o0-r0g" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="25" id="pJ1-sp-hJf"/>
             </constraints>
         </view>
     </objects>

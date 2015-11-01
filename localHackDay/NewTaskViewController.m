@@ -82,7 +82,6 @@
     
     PFObject *object = [categories objectAtIndex:row];
     NSString *pickerRowTitle = object[@"CategoryTitle"];
-    
     return pickerRowTitle;
      
    // return [taskCategories objectAtIndex:row];
@@ -101,7 +100,8 @@
 -(void) fetchCategoriesFromDB{
     [categories removeAllObjects];
     PFQuery *query = [PFQuery queryWithClassName:@"Category"];
-    [query whereKey:@"Owner" equalTo:[PFUser currentUser]];
+    PFUser *currentUser = [PFUser currentUser];
+    [query whereKey:@"Owner" equalTo:currentUser[@"Flat"]];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if(!error){
             for (PFObject *object in objects) {
@@ -109,6 +109,10 @@
             }
             dispatch_async(dispatch_get_main_queue(), ^ {
                 [createTaskCategoryPicker reloadAllComponents];
+                if([categories count] < 1){
+                    selectedCategory = nil;
+                    return;
+                }
                 selectedCategory = [categories objectAtIndex:0];
             });
         }else{
@@ -135,10 +139,20 @@
     task[@"TaskTitle"] = trimmedTitle;
     task[@"Category"] = selectedCategory;
     task[@"Status"] = @"Needs Action";
-    //task[@"StatusOwner"] = nil;
+    task[@"StatusOwner"] = [PFUser currentUser];
     task[@"StatusDate"] = [NSDate date];
-    [task save];
-    [self goBack];
+    
+    [task saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (!error) {
+            if (succeeded==YES) {
+                [self goBack];
+            }
+        }else{
+            NSLog(@"%@",error);
+        }
+        
+    }];
+    
 }
 
 

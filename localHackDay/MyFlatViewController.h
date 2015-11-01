@@ -16,7 +16,6 @@
 @property (nonatomic) NSMutableArray *flatMates;
 
 @property (weak, nonatomic) IBOutlet UIButton *addFlatmateButton;
-@property (weak, nonatomic) IBOutlet UIButton *changeUserButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *signOutButton;
 

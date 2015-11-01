@@ -18,6 +18,5 @@
 @property (weak, nonatomic) IBOutlet UITableView *tasksTableView;
 @property NSMutableArray *tasks;
 
-@property (weak, nonatomic) IBOutlet UIButton *addTaskButton;
 
 @end

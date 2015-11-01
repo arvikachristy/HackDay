@@ -1,23 +1,22 @@
 //
-//  RegisterViewController.m
+//  RegisterUserViewController.m
 //  localHackDay
 //
-//  Created by Apple on 10/10/2015.
-//  Copyright (c) 2015 team. All rights reserved.
+//  Created by Johnson Cheung on 24/10/2015.
+//  Copyright © 2015 team. All rights reserved.
 //
 
-#import "RegisterViewController.h"
-#import "LoginViewController.h"
+#import "RegisterUserViewController.h"
 #import <Parse/Parse.h>
 
-@interface RegisterViewController ()
+@interface RegisterUserViewController ()
 
 @end
 
-@implementation RegisterViewController
+@implementation RegisterUserViewController
 
-@synthesize flatNameBox;
-@synthesize numberOfPeopleBox;
+@synthesize flatmateDP;
+@synthesize nameTextField;
 @synthesize usernameBox;
 @synthesize passwordBox;
 @synthesize registerButton;
@@ -30,9 +29,9 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
+    [self setNeedsStatusBarAppearanceUpdate];
     
-    self.flatNameBox.delegate = self;
-    self.numberOfPeopleBox.delegate = self;
+    self.nameTextField.delegate = self;
     self.usernameBox.delegate = self;
     self.passwordBox.delegate = self;
     
@@ -40,11 +39,10 @@
     
     
     passwordBox.secureTextEntry = YES;
-    [numberOfPeopleBox setKeyboardType:UIKeyboardTypeNumberPad];
     
     
     errorLabel.text = @"";
-
+    
     
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(goBack)];
     swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
@@ -64,23 +62,15 @@
 
 - (IBAction)registerAction:(id)sender {
     
-    if (flatNameBox.text.length < 1) {
-        errorLabel.text = @"Flatname too short";
+    NSString *name = nameTextField.text;
+    if(name.length < 1){
+        errorLabel.text = @"Please enter your name";
         return;
-    } else if (flatNameBox.text.length > 32) {
-        errorLabel.text = @"Flatname too long";
-        return;
-    }
-    
-    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-    f.numberStyle = NSNumberFormatterDecimalStyle;
-    NSNumber *myNumber = [f numberFromString:numberOfPeopleBox.text];
-    if ([myNumber integerValue] < 1) {
-        errorLabel.text = @"too few people";
+    }else if (name.length > 32){
+        errorLabel.text = @"Sorry, your name is too long";
         return;
     }
-    
-    
+   
     NSString *trimmedUsername = [usernameBox.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     if([trimmedUsername containsString:@" "]){
         errorLabel.text = @"can't have space in username";
@@ -107,20 +97,50 @@
     
     
     PFUser *user = [PFUser user];
-    user[@"flatName"] = flatNameBox.text;
-    user[@"numberOfPeople"] = myNumber;
+    user[@"Name"] = name;
+    user[@"TasksCompleted"] = [NSNumber numberWithInt:0];
     user.username = trimmedUsername;
     user.password = trimmedPassword;
     
-    if ([user signUp] == YES) {
-        errorLabel.text = @"";
-        [self alertSuccess];
-    }else{
-        errorLabel.text = @"username taken :(";
-        return;
-    };
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (!error) {
+            if (succeeded==YES) {
+                errorLabel.text = @"";
+                if(flatmateDP.image){
+                    NSData *imageData = UIImageJPEGRepresentation(flatmateDP.image, 0.5);
+                    PFFile *imageFile = [PFFile fileWithName:@"dp.jpg" data:imageData];
+                    user[@"Image"] = imageFile;
+                    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                        if(!error){
+                            [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+                                if(!error){
+                                    [self alertSuccess];
+                                }
+                            }];
+                        }
+                        else{
+                            NSLog(@"%@",error);
+                        }
+                    }];
+                }
+                else{
+                    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+                        if(!error){
+                            [self alertSuccess];
+                        }
+                    }];
+
+                }
+            }
+        }
+        else{
+            NSLog(@"%@",error);
+            errorLabel.text = @"username taken :(";
+        }
+    }];
+   
     
-   }
+}
 
 -(void)alertSuccess{
     
@@ -168,7 +188,7 @@
     
     NSDictionary* info = [aNotification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-      
+    
     [scrollView setContentSize:scrollView.frame.size];
     
     UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
@@ -182,7 +202,7 @@
     CGRect aRect = self.view.frame;
     aRect.size.height -= kbSize.height;
     
-   
+    
     
     
     //if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
@@ -193,7 +213,7 @@
 // Called when the UIKeyboardWillHideNotification is sent
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification
 {
-   UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
     scrollView.contentInset = contentInsets;
     scrollView.scrollIndicatorInsets = contentInsets;
 }
@@ -209,14 +229,29 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(IBAction)changeDP:(id)sender{
+    imagePicker = [[UIImagePickerController alloc]init];
+    imagePicker.delegate = self;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
-*/
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    flatmateDP.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 
 @end

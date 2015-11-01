@@ -8,6 +8,7 @@
 
 #import "EditTaskViewController.h"
 #import "NewCategoryViewController.h"
+#import "SelectedCategoryViewController.h"
 #import <Parse/Parse.h>
 
 @interface EditTaskViewController ()
@@ -101,7 +102,8 @@
 -(void) fetchCategoriesFromDB{
     [categories removeAllObjects];
     PFQuery *query = [PFQuery queryWithClassName:@"Category"];
-    [query whereKey:@"Owner" equalTo:[PFUser currentUser]];
+    PFUser *currentUser = [PFUser currentUser];
+    [query whereKey:@"Owner" equalTo:currentUser[@"Flat"]];
     [query whereKey:@"objectId" notEqualTo:selectedCategory.objectId];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if(!error){
@@ -128,8 +130,18 @@
 -(IBAction)addSubmitEditedTaskButton:(id)sender{
     editingTask[@"TaskTitle"] = editTaskTitle.text;
     editingTask[@"Category"] = selectedCategory;
-    [editingTask save];
-    [self goBack];
+    [editingTask saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (!error) {
+            if (succeeded == YES) {
+                [self goBack];
+            }
+            else{
+                return;
+            }
+        }else{
+            NSLog(@"%@",error);
+        }
+    }];
 }
 
 -(IBAction)addDeleteTaskButton:(id)sender{
@@ -149,7 +161,13 @@
 }
 
 -(void)goBackTwice{
-    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+    NSMutableArray *allViewControllers = [NSMutableArray arrayWithArray:[self.navigationController viewControllers]];
+    for (UIViewController *aViewController in allViewControllers) {
+        if ([aViewController isKindOfClass:[SelectedCategoryViewController class]]) {
+            [self.navigationController popToViewController:aViewController animated:YES];
+        }
+    }
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 -(id)initWithTask:(PFObject*)task{
@@ -166,8 +184,14 @@
     UIAlertAction *confirmDelete = [UIAlertAction actionWithTitle:@"Delete Task" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action)
                          {
                              //Do some thing here
-                             [editingTask deleteInBackground];
-                             [self goBackTwice];
+                             [editingTask deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                                 if(!error){
+                                     [self goBackTwice];
+                                 }
+                                 else{
+                                     NSLog(@"%@",error);
+                                 }
+                             }];
                              
                          }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){

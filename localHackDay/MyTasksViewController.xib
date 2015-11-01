@@ -5,9 +5,9 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AvailableTasksViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyTasksViewController">
             <connections>
-                <outlet property="availableTasksTableView" destination="QQE-x6-JHJ" id="52s-Mu-pqX"/>
+                <outlet property="myTasksTableView" destination="Pij-FV-t60" id="HC7-PM-CR3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,34 +16,33 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QQE-x6-JHJ">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pij-FV-t60">
                     <rect key="frame" x="8" y="33" width="584" height="517"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="483" id="6H4-bb-hkh"/>
+                        <constraint firstAttribute="height" constant="483" id="dDE-1I-1VK"/>
                     </constraints>
                     <color key="sectionIndexColor" red="0.39027662810000002" green="1" blue="0.4706066525" alpha="1" colorSpace="calibratedRGB"/>
                     <variation key="default">
                         <mask key="constraints">
-                            <exclude reference="6H4-bb-hkh"/>
+                            <exclude reference="dDE-1I-1VK"/>
                         </mask>
                     </variation>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="kBx-3g-izJ"/>
-                        <outlet property="delegate" destination="-1" id="1dc-YG-YXk"/>
+                        <outlet property="dataSource" destination="-1" id="V11-Ya-Hay"/>
+                        <outlet property="delegate" destination="-1" id="Rwf-Ur-gam"/>
                     </connections>
                 </tableView>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottomMargin" secondItem="QQE-x6-JHJ" secondAttribute="bottom" constant="42" id="CvK-fA-GqT"/>
-                <constraint firstItem="QQE-x6-JHJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="25" id="EMw-g8-I5e"/>
-                <constraint firstItem="QQE-x6-JHJ" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="XZp-2d-4gh"/>
-                <constraint firstItem="QQE-x6-JHJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="sJW-md-wtp"/>
+                <constraint firstItem="Pij-FV-t60" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="JHV-ll-afs"/>
+                <constraint firstItem="Pij-FV-t60" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="25" id="JN8-dB-YEe"/>
+                <constraint firstItem="Pij-FV-t60" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="Lmx-R6-TUt"/>
+                <constraint firstAttribute="bottomMargin" secondItem="Pij-FV-t60" secondAttribute="bottom" constant="42" id="bmN-sT-1ZP"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
         </view>
     </objects>
 </document>

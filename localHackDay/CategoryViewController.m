@@ -28,8 +28,15 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:nil
+                                                                            action:nil];
     self.navigationItem.title = @"Categories";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                           target:self
+                                                                                           action:@selector(addCategories)];
+    
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
     [self fetchCategoriesFromDB];
@@ -41,7 +48,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)addCategoriesButton:(id)sender {
+- (void)addCategories{
     [self showViewController:[NewCategoryViewController alloc]  sender:nil];
 }
 
@@ -80,7 +87,8 @@
 -(void) fetchCategoriesFromDB{
     [categories removeAllObjects];
     PFQuery *query = [PFQuery queryWithClassName:@"Category"];
-    [query whereKey:@"Owner" equalTo:[PFUser currentUser]];
+    PFUser *currentUser = [PFUser currentUser];
+    [query whereKey:@"Owner" equalTo:currentUser[@"Flat"]];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if(!error){
             for (PFObject *object in objects) {

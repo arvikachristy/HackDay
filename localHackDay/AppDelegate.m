@@ -9,10 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "LoginViewController.h"
-#import "CategoryViewController.h"
 #import "MainTabBarController.h"
-#import "AvailableTasksViewController.h"
-#import "MyFlatViewController.h"
 
 
 @interface AppDelegate ()
@@ -26,6 +23,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes  categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]bounds]];
     
     // Override point for customization after application launch.
@@ -69,10 +70,12 @@
     
 }
 
+
+
 -(void)tryAutoLogin{
+    
     if([PFUser currentUser]){
       
-        //SettingsViewController *home2 = [[SettingsViewController alloc]init];
         MainTabBarController *home = [[MainTabBarController alloc]init];
         self.window.rootViewController = home;
         [self.window makeKeyAndVisible];
@@ -81,7 +84,12 @@
         self.window.rootViewController = loginView;
         [self.window makeKeyAndVisible];
     };
-
+    /*
+    NSLog(@"%@",[PFUser currentUser].objectId);
+    LoginViewController *loginView = [[LoginViewController alloc] initWithNibName:nil bundle:nil];
+    self.window.rootViewController = loginView;
+    [self.window makeKeyAndVisible];
+    */
 }
 
 @end

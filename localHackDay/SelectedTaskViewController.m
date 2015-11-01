@@ -9,7 +9,6 @@
 #import "SelectedTaskViewController.h"
 #import "EditTaskViewController.h"
 #import <Parse/parse.h>
-#import "loggedFlatmate.h"
 
 @interface SelectedTaskViewController ()
 
@@ -36,11 +35,25 @@
 
 
     PFObject *parentCategory = selectedTask[@"Category"];
-    [parentCategory fetch];
-    categoryLabel.text = parentCategory[@"CategoryTitle"];
+    [parentCategory fetchInBackgroundWithBlock:^(PFObject * _Nullable category, NSError * _Nullable error) {
+        if (!error) {
+            categoryLabel.text = category[@"CategoryTitle"];
+        }else{
+            NSLog(@"%@",error);
+        };
+    }];
    
+    
     currentStatusLabel.text = selectedTask[@"Status"];
-    statusOwnerLabel.text = @"";
+    
+    PFUser *statusOwner = selectedTask[@"StatusOwner"];
+    [statusOwner fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        if (!error) {
+            statusOwnerLabel.text = statusOwner[@"Name"];
+        }else{
+            NSLog(@"%@",error);
+        };
+    }];
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"yyyy-MM-dd"];
@@ -56,10 +69,6 @@
     } else{
         actionButton.hidden = true;
     }
-    
-    loggedFlatmate *sharedLoggedFlatmate = [loggedFlatmate sharedLoggedFlatmate];
-    NSLog(@"%@", sharedLoggedFlatmate.test);
-    [sharedLoggedFlatmate setTest:@"Changed!"];
     
 }
 
@@ -90,25 +99,55 @@
     [self showViewController:editTaskVC sender:nil];
 }
 
--(IBAction)addEditButton:(id)sender{
-    EditTaskViewController *editTaskVC = [[EditTaskViewController alloc]initWithTask:selectedTask];
-    [self showViewController:editTaskVC sender:nil];
-}
-
 -(IBAction)addActionButton:(id)sender{
     NSString *currentStatus = selectedTask[@"Status"];
     if([currentStatus isEqualToString:@"Needs Action"]){
         actionButton.hidden = false;
         selectedTask[@"Status"] = @"Checked Out";
+        selectedTask[@"StatusOwner"] = [PFUser currentUser];
         selectedTask[@"StatusDate"] = [NSDate date];
-        [selectedTask save];
+        [selectedTask saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (!error) {
+                if (succeeded == YES) {
+                    [self goBack];
+                }
+                else{
+                    return;
+                }
+            }else{
+                NSLog(@"%@",error);
+            }
+        }];
     } else if([currentStatus isEqualToString:@"Checked Out"]){
         actionButton.hidden = false;
         selectedTask[@"Status"] = @"Completed";
+        selectedTask[@"StatusOwner"] = [PFUser currentUser];
         selectedTask[@"StatusDate"] = [NSDate date];
-        [selectedTask save];
+        [selectedTask saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (!error) {
+                if (succeeded == YES) {
+                    
+                    PFUser *currentUser = [PFUser currentUser];
+                    NSNumber *tasksCompleted = currentUser[@"TasksCompleted"];
+                    NSInteger tasksInt = [tasksCompleted integerValue];
+                    tasksInt ++;
+                    currentUser[@"TasksCompleted"] = [NSNumber numberWithInteger:tasksInt];
+                    [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                        if(!error){
+                            [self goBack];
+                        }else{
+                            NSLog(@"%@", error);
+                        }
+                    }];
+                }
+                else{
+                    return;
+                }
+            }else{
+                NSLog(@"%@",error);
+            }
+        }];
     }
-    [self goBack];
 
 }
 
