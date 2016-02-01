@@ -24,7 +24,6 @@
 		7388DCEF1BD3B13B0088C824 /* AvailableTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7388DCED1BD3B13B0088C824 /* AvailableTasksViewController.m */; };
 		7388DCF01BD3B13B0088C824 /* AvailableTasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7388DCEE1BD3B13B0088C824 /* AvailableTasksViewController.xib */; };
 		7392C6081BD13D5300D2549A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7392C6061BD13D5300D2549A /* LoginViewController.m */; };
-		7392C6091BD13D5300D2549A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7392C6071BD13D5300D2549A /* LoginViewController.xib */; };
 		7392C60D1BD1422500D2549A /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7392C60B1BD1422400D2549A /* CategoryViewController.m */; };
 		7392C60E1BD1422500D2549A /* CategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7392C60C1BD1422400D2549A /* CategoryViewController.xib */; };
 		739DB4E21BD2D9E900336726 /* SelectedCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739DB4E01BD2D9E900336726 /* SelectedCategoryViewController.m */; };
@@ -39,6 +38,10 @@
 		73AAA75B1BD9005000B2906B /* NewFlatmateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AAA7591BD9005000B2906B /* NewFlatmateViewController.xib */; };
 		73B25A1F1BE4E91600D8A639 /* MyTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B25A1D1BE4E91600D8A639 /* MyTasksViewController.m */; };
 		73B25A201BE4E91600D8A639 /* MyTasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B25A1E1BE4E91600D8A639 /* MyTasksViewController.xib */; };
+		73B5644B1C045F70003CA2BD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B5644A1C045F70003CA2BD /* LoginViewController.xib */; };
+		73B6CABF1BF1417D006EBCE8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B6CABC1BF1417D006EBCE8 /* FBSDKCoreKit.framework */; };
+		73B6CAC01BF1417D006EBCE8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B6CABD1BF1417D006EBCE8 /* FBSDKLoginKit.framework */; };
+		73B6CAC11BF1417D006EBCE8 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B6CABE1BF1417D006EBCE8 /* FBSDKShareKit.framework */; };
 		73C1E9251BDC2AD4001565F4 /* RegisterFlatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C1E9231BDC2AD4001565F4 /* RegisterFlatViewController.m */; };
 		73C1E9261BDC2AD4001565F4 /* RegisterFlatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73C1E9241BDC2AD4001565F4 /* RegisterFlatViewController.xib */; };
 		73C1E92A1BDC2D16001565F4 /* RegisterUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C1E9281BDC2D16001565F4 /* RegisterUserViewController.m */; };
@@ -98,7 +101,6 @@
 		7388DCEE1BD3B13B0088C824 /* AvailableTasksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailableTasksViewController.xib; sourceTree = "<group>"; };
 		7392C6051BD13D5300D2549A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		7392C6061BD13D5300D2549A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		7392C6071BD13D5300D2549A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		7392C60A1BD1422400D2549A /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		7392C60B1BD1422400D2549A /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		7392C60C1BD1422400D2549A /* CategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryViewController.xib; sourceTree = "<group>"; };
@@ -119,6 +121,10 @@
 		73B25A1C1BE4E91600D8A639 /* MyTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTasksViewController.h; sourceTree = "<group>"; };
 		73B25A1D1BE4E91600D8A639 /* MyTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTasksViewController.m; sourceTree = "<group>"; };
 		73B25A1E1BE4E91600D8A639 /* MyTasksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTasksViewController.xib; sourceTree = "<group>"; };
+		73B5644A1C045F70003CA2BD /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		73B6CABC1BF1417D006EBCE8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		73B6CABD1BF1417D006EBCE8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		73B6CABE1BF1417D006EBCE8 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		73C1E9221BDC2AD4001565F4 /* RegisterFlatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterFlatViewController.h; sourceTree = "<group>"; };
 		73C1E9231BDC2AD4001565F4 /* RegisterFlatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterFlatViewController.m; sourceTree = "<group>"; };
 		73C1E9241BDC2AD4001565F4 /* RegisterFlatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterFlatViewController.xib; sourceTree = "<group>"; };
@@ -149,12 +155,15 @@
 			files = (
 				9063567E1BC962D500FD116A /* libsqlite3.dylib in Frameworks */,
 				9063567C1BC962BF00FD116A /* libz.dylib in Frameworks */,
+				73B6CAC11BF1417D006EBCE8 /* FBSDKShareKit.framework in Frameworks */,
 				9063567A1BC962B600FD116A /* SystemConfiguration.framework in Frameworks */,
 				906356781BC962AC00FD116A /* StoreKit.framework in Frameworks */,
+				73B6CAC01BF1417D006EBCE8 /* FBSDKLoginKit.framework in Frameworks */,
 				906356761BC962A600FD116A /* Security.framework in Frameworks */,
 				906356741BC9629E00FD116A /* QuartzCore.framework in Frameworks */,
 				906356721BC9629700FD116A /* CoreLocation.framework in Frameworks */,
 				906356701BC9628F00FD116A /* CoreGraphics.framework in Frameworks */,
+				73B6CABF1BF1417D006EBCE8 /* FBSDKCoreKit.framework in Frameworks */,
 				9063566E1BC9628600FD116A /* CFNetwork.framework in Frameworks */,
 				9063566C1BC9627F00FD116A /* AudioToolbox.framework in Frameworks */,
 				9063566A1BC9625F00FD116A /* Parse.framework in Frameworks */,
@@ -175,6 +184,9 @@
 		18EB3F311BC94F7600AE1581 = {
 			isa = PBXGroup;
 			children = (
+				73B6CABC1BF1417D006EBCE8 /* FBSDKCoreKit.framework */,
+				73B6CABD1BF1417D006EBCE8 /* FBSDKLoginKit.framework */,
+				73B6CABE1BF1417D006EBCE8 /* FBSDKShareKit.framework */,
 				9063567D1BC962D500FD116A /* libsqlite3.dylib */,
 				9063567B1BC962BF00FD116A /* libz.dylib */,
 				906356791BC962B600FD116A /* SystemConfiguration.framework */,
@@ -218,7 +230,7 @@
 				73AAA7591BD9005000B2906B /* NewFlatmateViewController.xib */,
 				7392C6051BD13D5300D2549A /* LoginViewController.h */,
 				7392C6061BD13D5300D2549A /* LoginViewController.m */,
-				7392C6071BD13D5300D2549A /* LoginViewController.xib */,
+				73B5644A1C045F70003CA2BD /* LoginViewController.xib */,
 				73C1E9271BDC2D16001565F4 /* RegisterUserViewController.h */,
 				73C1E9281BDC2D16001565F4 /* RegisterUserViewController.m */,
 				73C1E9291BDC2D16001565F4 /* RegisterUserViewController.xib */,
@@ -369,12 +381,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73B5644B1C045F70003CA2BD /* LoginViewController.xib in Resources */,
 				7302EF1B1BE032DD006D594D /* EditCategoryViewController.xib in Resources */,
 				73B25A201BE4E91600D8A639 /* MyTasksViewController.xib in Resources */,
 				73AAA7561BD8FA1800B2906B /* settingsIcon2.png in Resources */,
 				73C1E92B1BDC2D16001565F4 /* RegisterUserViewController.xib in Resources */,
 				7392C60E1BD1422500D2549A /* CategoryViewController.xib in Resources */,
-				7392C6091BD13D5300D2549A /* LoginViewController.xib in Resources */,
 				731986081BCDAAF5007D5B13 /* NewTaskViewController.xib in Resources */,
 				7323900E1BD3971A001AA917 /* Logo.png in Resources */,
 				739DB4F71BD3010000336726 /* MainTabBarController.xib in Resources */,
@@ -493,7 +505,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -531,7 +543,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -11,6 +11,8 @@
 #import "RegisterFlatViewController.h"
 #import "MainTabBarController.h"
 #import <Parse/Parse.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 
 @interface LoginViewController ()
@@ -26,12 +28,14 @@
 @synthesize loginButton;
 @synthesize registerButton;
 @synthesize scrollView;
+@synthesize FBloginPlaceholder;
 
 -(void)viewWillAppear:(BOOL)animated{
     errorLabel.text = @"";
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     passwordBox.secureTextEntry = YES;
     
@@ -43,6 +47,15 @@
     [self.view addGestureRecognizer:tapDismissKB];
     
     [self setNeedsStatusBarAppearanceUpdate];
+    
+    FBSDKLoginButton *FBloginButton = [[FBSDKLoginButton alloc] init];
+    FBloginButton.center = FBloginPlaceholder.center;
+    //FBloginButton.frame = FBloginPlaceholder.frame;
+    //FBloginButton.center = scrollView.center;
+    //FBloginButton.delegate = self;
+    FBloginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
+    [FBloginPlaceholder addSubview:FBloginButton];
+
 
     // Do any additional setup after loading the view, typically from a nib.
 }

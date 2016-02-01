@@ -40,6 +40,11 @@
                                                                                           action:@selector(addTask)];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
+    //UISegmentedControl *mySegment = [UISegmentedControl init];
+    //NSArray *mySegmentItems = @[@"Checked Out", @"Completed", @"Created"];
+    //[mySegment initWithItems:mySegmentItems];
+    
+    
     [self fetchTasksFromDB];
     
     
@@ -70,6 +75,9 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier
                                                             forIndexPath:indexPath];
+    
+    
+    
     if ([myTasks count] < 1) {
         //[myTasksTableView reloadData];
         return cell;
@@ -92,23 +100,30 @@
     [myTasks removeAllObjects];
     PFQuery *query = [PFQuery queryWithClassName:@"Task"];
     PFUser *currentUser = [PFUser currentUser];
-    [currentUser fetch];
-    [query whereKey:@"StatusOwner" equalTo:currentUser];
-    [query whereKey:@"Status" equalTo:@"Checked Out"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable tasks, NSError * _Nullable error) {
+    [currentUser fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
         if(!error){
-            for (PFObject *task in tasks) {
-                [myTasks addObject:task];
-                NSLog(@"%@",task.objectId);
-            }
-            //dispatch_async(dispatch_get_main_queue(), ^ {
-            [myTasksTableView reloadData];
-            //});
-        }else{
-            // Log details of the failure
+            [query whereKey:@"StatusOwner" equalTo:currentUser];
+            [query whereKey:@"Status" equalTo:@"Checked Out"];
+            [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable tasks, NSError * _Nullable error) {
+                if(!error){
+                    for (PFObject *task in tasks) {
+                        [myTasks addObject:task];
+                        //NSLog(@"%@",task.objectId);
+                    }
+                    //dispatch_async(dispatch_get_main_queue(), ^ {
+                    [myTasksTableView reloadData];
+                    //});
+                }else{
+                    // Log details of the failure
+                    NSLog(@"Error: %@ %@", error, [error userInfo]);
+                }
+            }];
+        }
+        else{
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+    
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
